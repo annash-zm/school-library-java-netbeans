@@ -314,7 +314,7 @@ public class edit_siswa extends javax.swing.JDialog {
         if (!empty(getnama) || !empty(gettempat) || !empty(gettl) || !empty(gettanggal)) {
             try {
                 Connection con = new database.connection().configDB();
-                String sql = "UPDATE murid SET nama = ?, tempat_lahir = ?, tanggal_lahir = ?, jurusan = ?, tanggal = ? WHERE id = '"+idnya.getText()+"'";
+                String sql = "UPDATE murid SET nama = ?, alamat = ?, no_telp = ?, kelas = ?, tanggal = ? WHERE id = '"+idnya.getText()+"'";
                 java.sql.PreparedStatement stat = con.prepareStatement(sql);
                 stat.setString(1, getnama);
                 stat.setString(2, gettempat);
@@ -392,9 +392,9 @@ public class edit_siswa extends javax.swing.JDialog {
             if (hasil.next()) {
                 nis.setText(hasil.getString("nis"));
                 nama.setText(hasil.getString("nama"));
-                tempat_lahir.setText(hasil.getString("tempat_lahir"));
-                tanggal_lahir.setText(hasil.getString("tanggal_lahir"));
-                jurusan.setSelectedItem(hasil.getString("jurusan"));
+                tempat_lahir.setText(hasil.getString("alamat"));
+                tanggal_lahir.setText(hasil.getString("no_telp"));
+                jurusan.setSelectedItem(hasil.getString("kelas"));
                 tanggal.setText(hasil.getString("tanggal"));
             }
         } catch (Exception e) {

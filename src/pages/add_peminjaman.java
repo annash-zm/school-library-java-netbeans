@@ -522,7 +522,7 @@ public class add_peminjaman extends javax.swing.JDialog {
             while (rs.next()) {
                 String nis = rs.getString("nis");
                 String nama = rs.getString("nama");
-                String jurusan = rs.getString("jurusan");
+                String jurusan = rs.getString("kelas");
                 
                 String[] data = {nis, nama, jurusan};
                 tbl2.addRow(data);
@@ -569,7 +569,7 @@ public class add_peminjaman extends javax.swing.JDialog {
     private void search_murid() {
         String query = cari_murid.getText();
         
-        Object []baris = {"NIS", "Nama", "Jurusan"};
+        Object []baris = {"NIS", "Nama", "Kelas"};
         tbl2 = new DefaultTableModel(null, baris) {
             public boolean isCellEditable(int row, int column) {
                 return false;
@@ -582,7 +582,7 @@ public class add_peminjaman extends javax.swing.JDialog {
             String sql = "SELECT * FROM murid WHERE BINARY "
                     + "nis LIKE '%"+query+"%' "
                     + "OR nama LIKE '%"+query+"%' "
-                    + "OR jurusan LIKE '%"+query+"%' "
+                    + "OR kelas LIKE '%"+query+"%' "
                     + "ORDER BY id ASC";
             java.sql.Statement stmt = con.createStatement();
             java.sql.ResultSet hasil = stmt.executeQuery(sql);
@@ -590,7 +590,7 @@ public class add_peminjaman extends javax.swing.JDialog {
             while (hasil.next()) {
                 String nis = hasil.getString("nis");
                 String nama = hasil.getString("nama");
-                String jurusan = hasil.getString("jurusan");
+                String jurusan = hasil.getString("kelas");
                 
                 String[] data = {nis, nama, jurusan};
                 tbl2.addRow(data);

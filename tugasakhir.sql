@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Sep 08, 2022 at 08:37 PM
+-- Host: 127.0.0.1
+-- Generation Time: Sep 09, 2022 at 01:46 PM
 -- Server version: 10.4.21-MariaDB
--- PHP Version: 7.4.29
+-- PHP Version: 8.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -75,9 +75,9 @@ CREATE TABLE `murid` (
   `id` int(11) NOT NULL,
   `nis` int(5) NOT NULL,
   `nama` varchar(45) NOT NULL,
-  `tempat_lahir` varchar(41) NOT NULL,
-  `tanggal_lahir` varchar(50) NOT NULL,
-  `jurusan` varchar(30) NOT NULL,
+  `alamat` varchar(41) NOT NULL,
+  `no_telp` varchar(50) NOT NULL,
+  `kelas` varchar(30) NOT NULL,
   `tanggal` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -85,11 +85,12 @@ CREATE TABLE `murid` (
 -- Dumping data for table `murid`
 --
 
-INSERT INTO `murid` (`id`, `nis`, `nama`, `tempat_lahir`, `tanggal_lahir`, `jurusan`, `tanggal`) VALUES
+INSERT INTO `murid` (`id`, `nis`, `nama`, `alamat`, `no_telp`, `kelas`, `tanggal`) VALUES
 (4, 40001, 'Dian Setiarini', 'Bekasi', '086772819291', '7A', '2022-02-01'),
 (5, 40002, 'Noviansyah Nugroho', 'Jakarta Timur', '087826181924', '7B', '2022-01-01'),
 (6, 40003, 'Lusi Bernard', 'Cibubur', '085672374192', '8A', '2022-01-01'),
-(7, 40004, 'Michael Lambert', 'Jakarta Timur', '086374827316', '9A', '2022-01-01');
+(7, 40004, 'Michael Lambert', 'Jakarta Timur', '086374827316', '9A', '2022-01-01'),
+(8, 40005, 'Budi Santoso', 'Jatisari', '087345267128', '7B', '2022-01-01');
 
 -- --------------------------------------------------------
 
@@ -101,7 +102,7 @@ CREATE TABLE `peminjaman` (
   `id` int(11) NOT NULL,
   `nis` int(5) NOT NULL,
   `nama` varchar(45) NOT NULL,
-  `jurusan` varchar(30) NOT NULL,
+  `kelas` varchar(30) NOT NULL,
   `kode` varchar(8) NOT NULL,
   `judul` varchar(68) NOT NULL,
   `tanggal` date NOT NULL
@@ -111,12 +112,13 @@ CREATE TABLE `peminjaman` (
 -- Dumping data for table `peminjaman`
 --
 
-INSERT INTO `peminjaman` (`id`, `nis`, `nama`, `jurusan`, `kode`, `judul`, `tanggal`) VALUES
+INSERT INTO `peminjaman` (`id`, `nis`, `nama`, `kelas`, `kode`, `judul`, `tanggal`) VALUES
 (10, 40001, 'Dian Setiarini', '7A', '0OCQBBQX', 'Mari Bung Rebut Kembali', '2022-09-08'),
 (11, 40003, 'Lusi Bernard', '8A', 'KQKM6UJ5', 'Ensiklopedia Komunikasi', '2022-09-08'),
 (12, 40002, 'Noviansyah Nugroho', '7B', 'ZR1PC9UI', 'Rentang Kasih', '2022-09-08'),
 (13, 40002, 'Noviansyah Nugroho', '7B', 'KQKM6UJ5', 'Ensiklopedia Komunikasi', '2022-09-08'),
-(14, 40004, 'Michael Lambert', '9A', 'SVJZGXVJ', 'Ayat-Ayat Cinta', '2022-09-08');
+(14, 40004, 'Michael Lambert', '9A', 'KQKM6UJ5', 'Ensiklopedia Komunikasi', '2022-09-08'),
+(15, 40004, 'Michael Lambert', '9A', 'ZR1PC9UI', 'Rentang Kasih', '2022-09-09');
 
 -- --------------------------------------------------------
 
@@ -196,13 +198,13 @@ ALTER TABLE `buku`
 -- AUTO_INCREMENT for table `murid`
 --
 ALTER TABLE `murid`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `peminjaman`
 --
 ALTER TABLE `peminjaman`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `pengembalian`

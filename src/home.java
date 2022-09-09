@@ -152,10 +152,10 @@ public class home extends javax.swing.JFrame {
         ubah5 = new javax.swing.JPanel();
         reportSiswa_ = new javax.swing.JLabel();
         pengembalian = new javax.swing.JPanel();
-        search_peminjaman1 = new placeholder.search();
+        search_pengembalian = new placeholder.search();
         jScrollPane4 = new javax.swing.JScrollPane();
         tb_pengembalian = new javax.swing.JTable();
-        result_peminjaman1 = new javax.swing.JLabel();
+        result_pengembalian = new javax.swing.JLabel();
         tambah4 = new javax.swing.JPanel();
         tambahPengembalian = new javax.swing.JLabel();
         ubah4 = new javax.swing.JPanel();
@@ -832,13 +832,13 @@ public class home extends javax.swing.JFrame {
 
         pengembalian.setBackground(new java.awt.Color(255, 255, 255));
 
-        search_peminjaman1.setToolTipText("Cari Data");
-        search_peminjaman1.addKeyListener(new java.awt.event.KeyAdapter() {
+        search_pengembalian.setToolTipText("Cari Data");
+        search_pengembalian.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                search_peminjaman1KeyPressed(evt);
+                search_pengembalianKeyPressed(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                search_peminjaman1KeyTyped(evt);
+                search_pengembalianKeyTyped(evt);
             }
         });
 
@@ -863,9 +863,9 @@ public class home extends javax.swing.JFrame {
         });
         jScrollPane4.setViewportView(tb_pengembalian);
 
-        result_peminjaman1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        result_peminjaman1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        result_peminjaman1.setText("Pengembalian Buku");
+        result_pengembalian.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        result_pengembalian.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        result_pengembalian.setText("Pengembalian Buku");
 
         tambah4.setBackground(new java.awt.Color(0, 102, 153));
 
@@ -990,9 +990,9 @@ public class home extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(pengembalianLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pengembalianLayout.createSequentialGroup()
-                        .addComponent(result_peminjaman1, javax.swing.GroupLayout.PREFERRED_SIZE, 657, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(result_pengembalian, javax.swing.GroupLayout.PREFERRED_SIZE, 657, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(search_peminjaman1, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(search_pengembalian, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 1019, Short.MAX_VALUE)
                     .addGroup(pengembalianLayout.createSequentialGroup()
                         .addComponent(tambah4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1011,8 +1011,8 @@ public class home extends javax.swing.JFrame {
             .addGroup(pengembalianLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pengembalianLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(search_peminjaman1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(result_peminjaman1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(search_pengembalian, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(result_pengembalian, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 372, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1362,13 +1362,17 @@ public class home extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_search_peminjamanKeyPressed
 
-    private void search_peminjaman1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_search_peminjaman1KeyPressed
+    private void search_pengembalianKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_search_pengembalianKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_search_peminjaman1KeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            search_pengembalian();
+        }
+    }//GEN-LAST:event_search_pengembalianKeyPressed
 
-    private void search_peminjaman1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_search_peminjaman1KeyTyped
+    private void search_pengembalianKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_search_pengembalianKeyTyped
         // TODO add your handling code here:
-    }//GEN-LAST:event_search_peminjaman1KeyTyped
+        search_pengembalian();
+    }//GEN-LAST:event_search_pengembalianKeyTyped
 
     private void tambahPengembalianMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tambahPengembalianMouseClicked
         // TODO add your handling code here:
@@ -1640,7 +1644,7 @@ public class home extends javax.swing.JFrame {
             while (hasil.next()) {
                 String nis = hasil.getString("nis");
                 String nama = hasil.getString("nama");
-                String jurusan = hasil.getString("jurusan");
+                String jurusan = hasil.getString("kelas");
                 String kode = hasil.getString("kode");
                 String judul = hasil.getString("judul");
                 String tanggal = hasil.getString("tanggal");
@@ -1718,9 +1722,9 @@ public class home extends javax.swing.JFrame {
             while (hasil.next()) {
                 String nis = hasil.getString("nis");
                 String nama = hasil.getString("nama");
-                String tempat_lahir = hasil.getString("tempat_lahir");
-                String tanggal_lahir = hasil.getString("tanggal_lahir");
-                String jurusan = hasil.getString("jurusan");
+                String tempat_lahir = hasil.getString("alamat");
+                String tanggal_lahir = hasil.getString("no_telp");
+                String jurusan = hasil.getString("kelas");
                 String tanggal = hasil.getString("tanggal");
                 
                 String[] data = {nis, nama, tempat_lahir, tanggal_lahir, jurusan, tanggal};
@@ -1769,7 +1773,7 @@ public class home extends javax.swing.JFrame {
     private void search_peminjaman() {
         String query = search_peminjaman.getText();
         
-        Object []baris = {"NIS", "Nama", "Jurusan", "Kode Buku", "Judul Buku", "Tanggal Peminjaman"};
+        Object []baris = {"NIS", "Nama", "Kelas", "Kode Buku", "Judul Buku", "Tanggal Peminjaman"};
         tbl1 = new DefaultTableModel(null, baris) {
             public boolean isCellEditable(int row, int column) {
                 return false;
@@ -1782,7 +1786,7 @@ public class home extends javax.swing.JFrame {
             String sql = "SELECT * FROM peminjaman WHERE BINARY "
                     + "nis LIKE '%"+query+"%' "
                     + "OR nama LIKE '%"+query+"%' "
-                    + "OR jurusan LIKE '%"+query+"%' "
+                    + "OR kelas LIKE '%"+query+"%' "
                     + "OR kode LIKE '%"+query+"%' "
                     + "OR judul LIKE '%"+query+"%' "
                     + "OR tanggal LIKE '%"+query+"%' "
@@ -1793,7 +1797,7 @@ public class home extends javax.swing.JFrame {
             while (hasil.next()) {
                 String nis = hasil.getString("nis");
                 String nama = hasil.getString("nama");
-                String jurusan = hasil.getString("jurusan");
+                String jurusan = hasil.getString("kelas");
                 String kode = hasil.getString("kode");
                 String judul = hasil.getString("judul");
                 String tanggal = hasil.getString("tanggal");
@@ -1808,6 +1812,51 @@ public class home extends javax.swing.JFrame {
                 result_peminjaman.setText("");
             }
         } catch (Exception e) {}
+    }
+    
+    private void search_pengembalian() {
+        String query = search_pengembalian.getText();
+        
+        Object []baris = {"NIS", "Nama", "Kelas", "Kode Buku", "Judul Buku", "Tanggal Kembali"};
+        tbl4 = new DefaultTableModel(null, baris) {
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
+        tb_pengembalian.setModel(tbl4);
+        
+        try {
+            Connection con = new database.connection().configDB();
+            String sql = "SELECT * FROM pengembalian WHERE BINARY "
+                    + "nis LIKE '%"+query+"%' "
+                    + "OR nama LIKE '%"+query+"%' "
+                    + "OR kelas LIKE '%"+query+"%' "
+                    + "OR kode_buku LIKE '%"+query+"%' "
+                    + "OR judul_buku LIKE '%"+query+"%' "
+                    + "OR tanggal_kembali LIKE '%"+query+"%' "
+                    + "ORDER BY id ASC";
+            java.sql.Statement stmt = con.createStatement();
+            java.sql.ResultSet hasil = stmt.executeQuery(sql);
+            
+            while (hasil.next()) {
+                String nis = hasil.getString("nis");
+                String nama = hasil.getString("nama");
+                String jurusan = hasil.getString("kelas");
+                String kode = hasil.getString("kode_buku");
+                String judul = hasil.getString("judul_buku");
+                String tanggal = hasil.getString("tanggal_kembali");
+                
+                String[] data = {nis, nama, jurusan, kode, judul, tanggal};
+                tbl4.addRow(data);
+            }
+            
+            if (!query.equals("")) {
+                result_pengembalian.setText("Hasil pencarian dari: '"+query+"'");
+            } else {
+                result_pengembalian.setText("");
+            }
+            
+        } catch (Exception e) {JOptionPane.showMessageDialog(null, e, "Kesalahan", JOptionPane.ERROR_MESSAGE);}
     }
     
     private void search_buku() {
@@ -1868,7 +1917,7 @@ public class home extends javax.swing.JFrame {
     private void search_siswa() {
         String query = search_siswa.getText();
         
-        Object []baris = {"NIS", "Nama Lengkap", "Tempat Lahir", "Tanggal Lahir", "Jurusan", "Tanggal Masuk"};
+        Object []baris = {"NIS", "Nama Lengkap", "Alamat", "No Telp", "Jurusan", "Tanggal Masuk"};
         tbl3 = new DefaultTableModel(null, baris) {
             public boolean isCellEditable(int row, int column) {
                 return false;
@@ -1881,9 +1930,9 @@ public class home extends javax.swing.JFrame {
             String sql = "SELECT * FROM murid WHERE BINARY "
                     + "nis LIKE '%"+query+"%' "
                     + "OR nama LIKE '%"+query+"%' "
-                    + "OR tempat_lahir LIKE '%"+query+"%' "
-                    + "OR tanggal_lahir LIKE '%"+query+"%' "
-                    + "OR jurusan LIKE '%"+query+"%' "
+                    + "OR alamat LIKE '%"+query+"%' "
+                    + "OR no_telp LIKE '%"+query+"%' "
+                    + "OR kelas LIKE '%"+query+"%' "
                     + "OR tanggal LIKE '%"+query+"%' "
                     + "ORDER BY id ASC";
             java.sql.Statement stmt = con.createStatement();
@@ -1892,9 +1941,9 @@ public class home extends javax.swing.JFrame {
             while (hasil.next()) {
                 String nis = hasil.getString("nis");
                 String nama = hasil.getString("nama");
-                String tempat_lahir = hasil.getString("tempat_lahir");
-                String tanggal_lahir = hasil.getString("tanggal_lahir");
-                String jurusan = hasil.getString("jurusan");
+                String tempat_lahir = hasil.getString("alamat");
+                String tanggal_lahir = hasil.getString("no_telp");
+                String jurusan = hasil.getString("kelas");
                 String tanggal = hasil.getString("tanggal");
                 
                 String[] data = {nis, nama, tempat_lahir, tanggal_lahir, jurusan, tanggal};
@@ -1940,11 +1989,11 @@ public class home extends javax.swing.JFrame {
     private javax.swing.JLabel reportSiswa_;
     private javax.swing.JLabel result_buku;
     private javax.swing.JLabel result_peminjaman;
-    private javax.swing.JLabel result_peminjaman1;
+    private javax.swing.JLabel result_pengembalian;
     private javax.swing.JLabel result_siswa;
     private javax.swing.JTextField search_buku;
     private javax.swing.JTextField search_peminjaman;
-    private javax.swing.JTextField search_peminjaman1;
+    private javax.swing.JTextField search_pengembalian;
     private javax.swing.JTextField search_siswa;
     private javax.swing.JPanel segarkan1;
     private javax.swing.JLabel segarkan1_value;

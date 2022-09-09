@@ -527,7 +527,7 @@ public class edit_peminjaman extends javax.swing.JDialog {
             if (rs.next()) {
                 nis.setText(rs.getString("nis"));
                 nama.setText(rs.getString("nama"));
-                jurusan.setText(rs.getString("jurusan"));
+                jurusan.setText(rs.getString("kelas"));
                 kode.setText(rs.getString("kode"));
                 judul.setText(rs.getString("judul"));
                 tanggal.setText(rs.getString("tanggal"));
@@ -580,7 +580,7 @@ public class edit_peminjaman extends javax.swing.JDialog {
     }
     
     private void tampil_murid() {
-        Object []baris = {"NIS", "Nama", "Jurusan"};
+        Object []baris = {"NIS", "Nama", "Kelas"};
         tbl2 = new DefaultTableModel(null, baris) {
             public boolean isCellEditable(int row, int column) {
                 return false;
@@ -597,7 +597,7 @@ public class edit_peminjaman extends javax.swing.JDialog {
             while (rs.next()) {
                 String nis = rs.getString("nis");
                 String nama = rs.getString("nama");
-                String jurusan = rs.getString("jurusan");
+                String jurusan = rs.getString("kelas");
                 
                 String[] data = {nis, nama, jurusan};
                 tbl2.addRow(data);
@@ -644,7 +644,7 @@ public class edit_peminjaman extends javax.swing.JDialog {
     private void search_murid() {
         String query = cari_murid.getText();
         
-        Object []baris = {"NIS", "Nama", "Jurusan"};
+        Object []baris = {"NIS", "Nama", "Kelas"};
         tbl2 = new DefaultTableModel(null, baris) {
             public boolean isCellEditable(int row, int column) {
                 return false;
@@ -657,7 +657,7 @@ public class edit_peminjaman extends javax.swing.JDialog {
             String sql = "SELECT * FROM murid WHERE BINARY "
                     + "nis LIKE '%"+query+"%' "
                     + "OR nama LIKE '%"+query+"%' "
-                    + "OR jurusan LIKE '%"+query+"%' "
+                    + "OR kelas LIKE '%"+query+"%' "
                     + "ORDER BY id ASC";
             java.sql.Statement stmt = con.createStatement();
             java.sql.ResultSet hasil = stmt.executeQuery(sql);
@@ -665,7 +665,7 @@ public class edit_peminjaman extends javax.swing.JDialog {
             while (hasil.next()) {
                 String nis = hasil.getString("nis");
                 String nama = hasil.getString("nama");
-                String jurusan = hasil.getString("jurusan");
+                String jurusan = hasil.getString("kelas");
                 
                 String[] data = {nis, nama, jurusan};
                 tbl2.addRow(data);
@@ -715,7 +715,7 @@ public class edit_peminjaman extends javax.swing.JDialog {
         if (!empty(gettanggal)) {
             try {
                 Connection con = new database.connection().configDB();
-                String sql = "UPDATE peminjaman SET nis = ?, nama = ?, jurusan = ?, kode = ?, judul = ?, tanggal = ? WHERE id = '"+id+"'";
+                String sql = "UPDATE peminjaman SET nis = ?, nama = ?, kelas = ?, kode = ?, judul = ?, tanggal = ? WHERE id = '"+id+"'";
                 java.sql.PreparedStatement stat = con.prepareStatement(sql);
                 stat.setString(1, getnis);
                 stat.setString(2, getnama);

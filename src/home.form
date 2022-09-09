@@ -1126,9 +1126,9 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="result_peminjaman1" min="-2" pref="657" max="-2" attributes="0"/>
+                                  <Component id="result_pengembalian" min="-2" pref="657" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="search_peminjaman1" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="search_pengembalian" min="-2" pref="320" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jScrollPane4" alignment="0" pref="1019" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
@@ -1152,8 +1152,8 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="search_peminjaman1" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
-                              <Component id="result_peminjaman1" alignment="3" max="32767" attributes="0"/>
+                              <Component id="search_pengembalian" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                              <Component id="result_pengembalian" alignment="3" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jScrollPane4" pref="372" max="32767" attributes="0"/>
@@ -1171,13 +1171,13 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JTextField" name="search_peminjaman1">
+                <Component class="javax.swing.JTextField" name="search_pengembalian">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="Cari Data"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="search_peminjaman1KeyPressed"/>
-                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="search_peminjaman1KeyTyped"/>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="search_pengembalianKeyPressed"/>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="search_pengembalianKeyTyped"/>
                   </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new placeholder.search()"/>
@@ -1243,7 +1243,7 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Component class="javax.swing.JLabel" name="result_peminjaman1">
+                <Component class="javax.swing.JLabel" name="result_pengembalian">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="18" style="0"/>

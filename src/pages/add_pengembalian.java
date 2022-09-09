@@ -525,7 +525,7 @@ public class add_pengembalian extends javax.swing.JDialog {
             while (rs.next()) {
                 String nis = rs.getString("nis");
                 String nama = rs.getString("nama");
-                String jurusan = rs.getString("jurusan");
+                String jurusan = rs.getString("kelas");
                 
                 String[] data = {nis, nama, jurusan};
                 tbl2.addRow(data);
