@@ -60,12 +60,12 @@ public class user extends javax.swing.JDialog {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        header2.setBackground(new java.awt.Color(204, 0, 0));
+        header2.setBackground(new java.awt.Color(0, 102, 153));
         header2.setPreferredSize(new java.awt.Dimension(718, 47));
 
         close_btn2.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         close_btn2.setForeground(new java.awt.Color(255, 255, 255));
-        close_btn2.setText("×");
+        close_btn2.setText("x");
         close_btn2.setToolTipText("Keluar?");
         close_btn2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -96,7 +96,7 @@ public class user extends javax.swing.JDialog {
 
         jLabel2.setText("Kata Sandi");
 
-        esbtn.setBackground(new java.awt.Color(204, 0, 0));
+        esbtn.setBackground(new java.awt.Color(0, 102, 153));
 
         edit_save.setForeground(new java.awt.Color(255, 255, 255));
         edit_save.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

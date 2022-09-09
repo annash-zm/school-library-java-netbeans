@@ -114,12 +114,12 @@ public class add_pengembalian extends javax.swing.JDialog {
         body.setBackground(new java.awt.Color(255, 255, 255));
         body.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        header.setBackground(new java.awt.Color(204, 0, 0));
+        header.setBackground(new java.awt.Color(0, 102, 153));
         header.setPreferredSize(new java.awt.Dimension(718, 47));
 
         close_btn.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         close_btn.setForeground(new java.awt.Color(255, 255, 255));
-        close_btn.setText("×");
+        close_btn.setText("x");
         close_btn.setToolTipText("Keluar?");
         close_btn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -288,7 +288,7 @@ public class add_pengembalian extends javax.swing.JDialog {
                     .addComponent(jLabel4)
                     .addComponent(jLabel5)
                     .addComponent(jLabel6))
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addContainerGap(90, Short.MAX_VALUE))
             .addComponent(tanggal)
         );
         data_bukuLayout.setVerticalGroup(
@@ -314,7 +314,7 @@ public class add_pengembalian extends javax.swing.JDialog {
 
         jLabel8.setText("Data Buku yang Dipinjam");
 
-        save_btn.setBackground(new java.awt.Color(204, 0, 0));
+        save_btn.setBackground(new java.awt.Color(0, 102, 153));
 
         save.setForeground(new java.awt.Color(255, 255, 255));
         save.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -354,7 +354,7 @@ public class add_pengembalian extends javax.swing.JDialog {
                                         .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE))
                                     .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel8))
-                                .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGap(0, 9, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(bodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(data_murid, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)

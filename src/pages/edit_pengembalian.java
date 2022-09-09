@@ -116,12 +116,12 @@ public class edit_pengembalian extends javax.swing.JDialog {
         body.setBackground(new java.awt.Color(255, 255, 255));
         body.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        header.setBackground(new java.awt.Color(204, 0, 0));
+        header.setBackground(new java.awt.Color(0, 102, 153));
         header.setPreferredSize(new java.awt.Dimension(718, 47));
 
         close_btn.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         close_btn.setForeground(new java.awt.Color(255, 255, 255));
-        close_btn.setText("×");
+        close_btn.setText("x");
         close_btn.setToolTipText("Keluar?");
         close_btn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -290,7 +290,7 @@ public class edit_pengembalian extends javax.swing.JDialog {
                     .addComponent(jLabel4)
                     .addComponent(jLabel5)
                     .addComponent(jLabel6))
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addContainerGap(99, Short.MAX_VALUE))
             .addComponent(tanggal)
             .addGroup(data_bukuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(data_bukuLayout.createSequentialGroup()
@@ -314,7 +314,7 @@ public class edit_pengembalian extends javax.swing.JDialog {
                 .addComponent(judul, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addComponent(tanggal, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(data_bukuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -326,7 +326,7 @@ public class edit_pengembalian extends javax.swing.JDialog {
 
         jLabel8.setText("Data Buku yang Dipinjam");
 
-        save_btn.setBackground(new java.awt.Color(204, 0, 0));
+        save_btn.setBackground(new java.awt.Color(0, 102, 153));
 
         save.setForeground(new java.awt.Color(255, 255, 255));
         save.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

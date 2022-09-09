@@ -72,6 +72,7 @@ public class login extends javax.swing.JFrame {
         submit = new javax.swing.JLabel();
         label3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -79,11 +80,11 @@ public class login extends javax.swing.JFrame {
         body.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         body.setForeground(new java.awt.Color(255, 255, 255));
 
-        header.setBackground(new java.awt.Color(204, 0, 0));
+        header.setBackground(new java.awt.Color(0, 102, 153));
 
         close_btn.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         close_btn.setForeground(new java.awt.Color(255, 255, 255));
-        close_btn.setText("×");
+        close_btn.setText("x");
         close_btn.setToolTipText("Keluar?");
         close_btn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -127,7 +128,7 @@ public class login extends javax.swing.JFrame {
         label1.setText("Masuk untuk melanjutkan");
 
         label2.setFont(new java.awt.Font("Tahoma", 1, 28)); // NOI18N
-        label2.setForeground(new java.awt.Color(204, 0, 0));
+        label2.setForeground(new java.awt.Color(0, 102, 153));
         label2.setText("Sistem Informasi Perpustakaan");
 
         username.setToolTipText("masukkan nama pengguna kamu");
@@ -144,7 +145,7 @@ public class login extends javax.swing.JFrame {
             }
         });
 
-        button.setBackground(new java.awt.Color(204, 0, 0));
+        button.setBackground(new java.awt.Color(0, 102, 153));
 
         submit.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         submit.setForeground(new java.awt.Color(255, 255, 255));
@@ -172,10 +173,10 @@ public class login extends javax.swing.JFrame {
         );
 
         label3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        label3.setForeground(new java.awt.Color(204, 0, 0));
+        label3.setForeground(new java.awt.Color(0, 102, 153));
         label3.setText("SMP Assyairiyah Attahiriyah ");
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("/Users/Annash/Downloads/TugasAkhir/src/image/LOGO_SMP.jpg")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/LOGO_SMP.jpg"))); // NOI18N
 
         javax.swing.GroupLayout bodyLayout = new javax.swing.GroupLayout(body);
         body.setLayout(bodyLayout);
@@ -193,30 +194,37 @@ public class login extends javax.swing.JFrame {
                             .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(bodyLayout.createSequentialGroup()
-                        .addGap(111, 111, 111)
-                        .addComponent(label2))
-                    .addGroup(bodyLayout.createSequentialGroup()
-                        .addGap(286, 286, 286)
+                        .addGroup(bodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(bodyLayout.createSequentialGroup()
+                                .addGap(113, 113, 113)
+                                .addComponent(label2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bodyLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(label3)
+                                .addGap(51, 51, 51)))
                         .addComponent(jLabel1))
                     .addGroup(bodyLayout.createSequentialGroup()
-                        .addGap(167, 167, 167)
-                        .addComponent(label3))
-                    .addGroup(bodyLayout.createSequentialGroup()
                         .addGap(258, 258, 258)
-                        .addComponent(label1)))
-                .addContainerGap(125, Short.MAX_VALUE))
+                        .addComponent(label1))
+                    .addGroup(bodyLayout.createSequentialGroup()
+                        .addGap(283, 283, 283)
+                        .addComponent(jLabel2)))
+                .addContainerGap(117, Short.MAX_VALUE))
         );
         bodyLayout.setVerticalGroup(
             bodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bodyLayout.createSequentialGroup()
                 .addComponent(header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2)
+                .addGap(12, 12, 12)
                 .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(label3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addComponent(label1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -390,6 +398,7 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JLabel close_btn;
     private javax.swing.JPanel header;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel label1;
     private javax.swing.JLabel label2;
     private javax.swing.JLabel label3;

@@ -69,7 +69,7 @@
         <Container class="javax.swing.JPanel" name="header">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="cc" type="rgb"/>
+              <Color blue="99" green="66" red="0" type="rgb"/>
             </Property>
           </Properties>
 
@@ -121,7 +121,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="&#xd7;"/>
+                <Property name="text" type="java.lang.String" value="x"/>
                 <Property name="toolTipText" type="java.lang.String" value="Keluar?"/>
               </Properties>
               <Events>
@@ -189,10 +189,10 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="result_peminjaman" min="-2" pref="657" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace pref="42" max="32767" attributes="0"/>
                                   <Component id="search_peminjaman" min="-2" pref="320" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jScrollPane1" pref="1003" max="32767" attributes="0"/>
+                              <Component id="jScrollPane1" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="tambah1" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -201,7 +201,7 @@
                                   <Component id="hapus1" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="printPeminjaman" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace pref="276" max="32767" attributes="0"/>
                                   <Component id="segarkan1" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -317,14 +317,14 @@
                 <Container class="javax.swing.JPanel" name="tambah1">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="cc" type="rgb"/>
+                      <Color blue="99" green="66" red="0" type="rgb"/>
                     </Property>
                   </Properties>
 
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="tambah1_value" alignment="0" pref="145" max="32767" attributes="0"/>
+                          <Component id="tambah1_value" alignment="1" pref="145" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
@@ -357,14 +357,14 @@
                 <Container class="javax.swing.JPanel" name="ubah1">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="cc" type="rgb"/>
+                      <Color blue="99" green="66" red="0" type="rgb"/>
                     </Property>
                   </Properties>
 
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="ubah1_value" alignment="0" pref="145" max="32767" attributes="0"/>
+                          <Component id="ubah1_value" alignment="1" pref="145" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
@@ -394,14 +394,14 @@
                 <Container class="javax.swing.JPanel" name="hapus1">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="cc" type="rgb"/>
+                      <Color blue="99" green="66" red="0" type="rgb"/>
                     </Property>
                   </Properties>
 
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="hapus1_value" alignment="0" pref="145" max="32767" attributes="0"/>
+                          <Component id="hapus1_value" alignment="1" pref="145" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
@@ -431,14 +431,14 @@
                 <Container class="javax.swing.JPanel" name="segarkan1">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="cc" type="rgb"/>
+                      <Color blue="99" green="66" red="0" type="rgb"/>
                     </Property>
                   </Properties>
 
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="segarkan1_value" alignment="0" pref="145" max="32767" attributes="0"/>
+                          <Component id="segarkan1_value" alignment="1" pref="145" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
@@ -468,7 +468,7 @@
                 <Container class="javax.swing.JPanel" name="printPeminjaman">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="cc" type="rgb"/>
+                      <Color blue="99" green="66" red="0" type="rgb"/>
                     </Property>
                   </Properties>
 
@@ -533,7 +533,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="search_buku" min="-2" pref="320" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jScrollPane2" alignment="0" pref="1003" max="32767" attributes="0"/>
+                              <Component id="jScrollPane2" alignment="0" pref="1019" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="tambah2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -620,7 +620,7 @@
                 <Container class="javax.swing.JPanel" name="tambah2">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="cc" type="rgb"/>
+                      <Color blue="99" green="66" red="0" type="rgb"/>
                     </Property>
                   </Properties>
 
@@ -657,7 +657,7 @@
                 <Container class="javax.swing.JPanel" name="ubah2">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="cc" type="rgb"/>
+                      <Color blue="99" green="66" red="0" type="rgb"/>
                     </Property>
                   </Properties>
 
@@ -694,7 +694,7 @@
                 <Container class="javax.swing.JPanel" name="hapus2">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="cc" type="rgb"/>
+                      <Color blue="99" green="66" red="0" type="rgb"/>
                     </Property>
                   </Properties>
 
@@ -731,14 +731,14 @@
                 <Container class="javax.swing.JPanel" name="segarkan2">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="cc" type="rgb"/>
+                      <Color blue="99" green="66" red="0" type="rgb"/>
                     </Property>
                   </Properties>
 
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="segarkan2_value" alignment="0" pref="145" max="32767" attributes="0"/>
+                          <Component id="segarkan2_value" alignment="1" pref="145" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
@@ -768,7 +768,7 @@
                 <Container class="javax.swing.JPanel" name="hapus5">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="cc" type="rgb"/>
+                      <Color blue="99" green="66" red="0" type="rgb"/>
                     </Property>
                   </Properties>
 
@@ -833,7 +833,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="search_siswa" min="-2" pref="320" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jScrollPane3" alignment="0" pref="1003" max="32767" attributes="0"/>
+                              <Component id="jScrollPane3" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="tambah3" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -842,7 +842,7 @@
                                   <Component id="hapus3" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="ubah5" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace pref="276" max="32767" attributes="0"/>
                                   <Component id="segarkan3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -921,14 +921,14 @@
                 <Container class="javax.swing.JPanel" name="tambah3">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="cc" type="rgb"/>
+                      <Color blue="99" green="66" red="0" type="rgb"/>
                     </Property>
                   </Properties>
 
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="tambah3_value" alignment="0" pref="145" max="32767" attributes="0"/>
+                          <Component id="tambah3_value" alignment="1" pref="145" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
@@ -958,14 +958,14 @@
                 <Container class="javax.swing.JPanel" name="ubah3">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="cc" type="rgb"/>
+                      <Color blue="99" green="66" red="0" type="rgb"/>
                     </Property>
                   </Properties>
 
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="ubah3_value" alignment="0" pref="145" max="32767" attributes="0"/>
+                          <Component id="ubah3_value" alignment="1" pref="145" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
@@ -995,14 +995,14 @@
                 <Container class="javax.swing.JPanel" name="hapus3">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="cc" type="rgb"/>
+                      <Color blue="99" green="66" red="0" type="rgb"/>
                     </Property>
                   </Properties>
 
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="hapus3_value" alignment="0" pref="145" max="32767" attributes="0"/>
+                          <Component id="hapus3_value" alignment="1" pref="145" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
@@ -1032,14 +1032,14 @@
                 <Container class="javax.swing.JPanel" name="segarkan3">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="cc" type="rgb"/>
+                      <Color blue="99" green="66" red="0" type="rgb"/>
                     </Property>
                   </Properties>
 
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="segarkan3_value" alignment="0" pref="145" max="32767" attributes="0"/>
+                          <Component id="segarkan3_value" alignment="1" pref="145" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
@@ -1069,7 +1069,7 @@
                 <Container class="javax.swing.JPanel" name="ubah5">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="cc" type="rgb"/>
+                      <Color blue="99" green="66" red="0" type="rgb"/>
                     </Property>
                   </Properties>
 
@@ -1130,7 +1130,7 @@
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Component id="search_peminjaman1" min="-2" pref="320" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jScrollPane4" alignment="0" pref="1003" max="32767" attributes="0"/>
+                              <Component id="jScrollPane4" alignment="0" pref="1019" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="tambah4" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -1255,7 +1255,7 @@
                 <Container class="javax.swing.JPanel" name="tambah4">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="cc" type="rgb"/>
+                      <Color blue="99" green="66" red="0" type="rgb"/>
                     </Property>
                   </Properties>
 
@@ -1292,7 +1292,7 @@
                 <Container class="javax.swing.JPanel" name="ubah4">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="cc" type="rgb"/>
+                      <Color blue="99" green="66" red="0" type="rgb"/>
                     </Property>
                   </Properties>
 
@@ -1329,7 +1329,7 @@
                 <Container class="javax.swing.JPanel" name="hapus4">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="cc" type="rgb"/>
+                      <Color blue="99" green="66" red="0" type="rgb"/>
                     </Property>
                   </Properties>
 
@@ -1366,14 +1366,14 @@
                 <Container class="javax.swing.JPanel" name="segarkan4">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="cc" type="rgb"/>
+                      <Color blue="99" green="66" red="0" type="rgb"/>
                     </Property>
                   </Properties>
 
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="segarkan1_value1" alignment="0" pref="145" max="32767" attributes="0"/>
+                          <Component id="segarkan1_value1" alignment="1" pref="145" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
@@ -1403,7 +1403,7 @@
                 <Container class="javax.swing.JPanel" name="ubah6">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="cc" type="rgb"/>
+                      <Color blue="99" green="66" red="0" type="rgb"/>
                     </Property>
                   </Properties>
 
@@ -1464,7 +1464,7 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="1015" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="1031" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
@@ -1479,7 +1479,7 @@
         <Container class="javax.swing.JPanel" name="footer">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="cc" type="rgb"/>
+              <Color blue="99" green="66" red="0" type="rgb"/>
             </Property>
           </Properties>
 

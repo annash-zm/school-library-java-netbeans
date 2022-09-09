@@ -94,12 +94,12 @@ public class add_siswa extends javax.swing.JDialog {
         body.setBackground(new java.awt.Color(255, 255, 255));
         body.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        header.setBackground(new java.awt.Color(204, 0, 0));
+        header.setBackground(new java.awt.Color(0, 102, 153));
         header.setPreferredSize(new java.awt.Dimension(718, 47));
 
         close_btn.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         close_btn.setForeground(new java.awt.Color(255, 255, 255));
-        close_btn.setText("×");
+        close_btn.setText("x");
         close_btn.setToolTipText("Keluar?");
         close_btn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -151,7 +151,7 @@ public class add_siswa extends javax.swing.JDialog {
 
         jLabel2.setText("Tanggal Siswa Masuk (YYYY-MM-DD)");
 
-        save_btn.setBackground(new java.awt.Color(204, 0, 0));
+        save_btn.setBackground(new java.awt.Color(0, 102, 153));
 
         save.setForeground(new java.awt.Color(255, 255, 255));
         save.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -166,7 +166,7 @@ public class add_siswa extends javax.swing.JDialog {
         save_btn.setLayout(save_btnLayout);
         save_btnLayout.setHorizontalGroup(
             save_btnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(save, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
+            .addComponent(save, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
         );
         save_btnLayout.setVerticalGroup(
             save_btnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -58,7 +58,7 @@ public class home extends javax.swing.JFrame {
     public home() {
         super("Tugas Akhir");
         Dimension screen=Toolkit.getDefaultToolkit().getScreenSize();
-        this.setSize(screen.width-250,screen.height-200);
+        this.setSize(screen.width-250,screen.height-150);
         //setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
         setResizable(false);
         
@@ -175,7 +175,7 @@ public class home extends javax.swing.JFrame {
         body.setBackground(new java.awt.Color(255, 255, 255));
         body.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        header.setBackground(new java.awt.Color(204, 0, 0));
+        header.setBackground(new java.awt.Color(0, 102, 153));
 
         title.setFont(new java.awt.Font("Back to Black Demo", 0, 24)); // NOI18N
         title.setForeground(new java.awt.Color(255, 255, 255));
@@ -184,7 +184,7 @@ public class home extends javax.swing.JFrame {
 
         close_btn.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         close_btn.setForeground(new java.awt.Color(255, 255, 255));
-        close_btn.setText("×");
+        close_btn.setText("x");
         close_btn.setToolTipText("Keluar?");
         close_btn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -273,7 +273,7 @@ public class home extends javax.swing.JFrame {
         result_peminjaman.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         result_peminjaman.setText("Peminjaman Buku");
 
-        tambah1.setBackground(new java.awt.Color(204, 0, 0));
+        tambah1.setBackground(new java.awt.Color(0, 102, 153));
 
         tambah1_value.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         tambah1_value.setForeground(new java.awt.Color(255, 255, 255));
@@ -289,14 +289,14 @@ public class home extends javax.swing.JFrame {
         tambah1.setLayout(tambah1Layout);
         tambah1Layout.setHorizontalGroup(
             tambah1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tambah1_value, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
+            .addComponent(tambah1_value, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
         );
         tambah1Layout.setVerticalGroup(
             tambah1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(tambah1_value, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
         );
 
-        ubah1.setBackground(new java.awt.Color(204, 0, 0));
+        ubah1.setBackground(new java.awt.Color(0, 102, 153));
 
         ubah1_value.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         ubah1_value.setForeground(new java.awt.Color(255, 255, 255));
@@ -312,14 +312,14 @@ public class home extends javax.swing.JFrame {
         ubah1.setLayout(ubah1Layout);
         ubah1Layout.setHorizontalGroup(
             ubah1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ubah1_value, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
+            .addComponent(ubah1_value, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
         );
         ubah1Layout.setVerticalGroup(
             ubah1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(ubah1_value, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
         );
 
-        hapus1.setBackground(new java.awt.Color(204, 0, 0));
+        hapus1.setBackground(new java.awt.Color(0, 102, 153));
 
         hapus1_value.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         hapus1_value.setForeground(new java.awt.Color(255, 255, 255));
@@ -335,14 +335,14 @@ public class home extends javax.swing.JFrame {
         hapus1.setLayout(hapus1Layout);
         hapus1Layout.setHorizontalGroup(
             hapus1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(hapus1_value, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
+            .addComponent(hapus1_value, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
         );
         hapus1Layout.setVerticalGroup(
             hapus1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(hapus1_value, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
         );
 
-        segarkan1.setBackground(new java.awt.Color(204, 0, 0));
+        segarkan1.setBackground(new java.awt.Color(0, 102, 153));
 
         segarkan1_value.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         segarkan1_value.setForeground(new java.awt.Color(255, 255, 255));
@@ -358,14 +358,14 @@ public class home extends javax.swing.JFrame {
         segarkan1.setLayout(segarkan1Layout);
         segarkan1Layout.setHorizontalGroup(
             segarkan1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(segarkan1_value, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
+            .addComponent(segarkan1_value, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
         );
         segarkan1Layout.setVerticalGroup(
             segarkan1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(segarkan1_value, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
         );
 
-        printPeminjaman.setBackground(new java.awt.Color(204, 0, 0));
+        printPeminjaman.setBackground(new java.awt.Color(0, 102, 153));
 
         reportPeminjaman_.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         reportPeminjaman_.setForeground(new java.awt.Color(255, 255, 255));
@@ -397,9 +397,9 @@ public class home extends javax.swing.JFrame {
                 .addGroup(peminjamanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(peminjamanLayout.createSequentialGroup()
                         .addComponent(result_peminjaman, javax.swing.GroupLayout.PREFERRED_SIZE, 657, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                         .addComponent(search_peminjaman, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1003, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1)
                     .addGroup(peminjamanLayout.createSequentialGroup()
                         .addComponent(tambah1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -408,7 +408,7 @@ public class home extends javax.swing.JFrame {
                         .addComponent(hapus1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(printPeminjaman, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 276, Short.MAX_VALUE)
                         .addComponent(segarkan1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -471,7 +471,7 @@ public class home extends javax.swing.JFrame {
         result_buku.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         result_buku.setText("Data Buku");
 
-        tambah2.setBackground(new java.awt.Color(204, 0, 0));
+        tambah2.setBackground(new java.awt.Color(0, 102, 153));
 
         tambah2_value.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         tambah2_value.setForeground(new java.awt.Color(255, 255, 255));
@@ -494,7 +494,7 @@ public class home extends javax.swing.JFrame {
             .addComponent(tambah2_value, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
         );
 
-        ubah2.setBackground(new java.awt.Color(204, 0, 0));
+        ubah2.setBackground(new java.awt.Color(0, 102, 153));
 
         ubah2_value.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         ubah2_value.setForeground(new java.awt.Color(255, 255, 255));
@@ -517,7 +517,7 @@ public class home extends javax.swing.JFrame {
             .addComponent(ubah2_value, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
         );
 
-        hapus2.setBackground(new java.awt.Color(204, 0, 0));
+        hapus2.setBackground(new java.awt.Color(0, 102, 153));
 
         hapus2_value.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         hapus2_value.setForeground(new java.awt.Color(255, 255, 255));
@@ -540,7 +540,7 @@ public class home extends javax.swing.JFrame {
             .addComponent(hapus2_value, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
         );
 
-        segarkan2.setBackground(new java.awt.Color(204, 0, 0));
+        segarkan2.setBackground(new java.awt.Color(0, 102, 153));
 
         segarkan2_value.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         segarkan2_value.setForeground(new java.awt.Color(255, 255, 255));
@@ -556,14 +556,14 @@ public class home extends javax.swing.JFrame {
         segarkan2.setLayout(segarkan2Layout);
         segarkan2Layout.setHorizontalGroup(
             segarkan2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(segarkan2_value, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
+            .addComponent(segarkan2_value, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
         );
         segarkan2Layout.setVerticalGroup(
             segarkan2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(segarkan2_value, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
         );
 
-        hapus5.setBackground(new java.awt.Color(204, 0, 0));
+        hapus5.setBackground(new java.awt.Color(0, 102, 153));
 
         reportBuku_.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         reportBuku_.setForeground(new java.awt.Color(255, 255, 255));
@@ -597,7 +597,7 @@ public class home extends javax.swing.JFrame {
                         .addComponent(result_buku, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(search_buku, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1003, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1019, Short.MAX_VALUE)
                     .addGroup(kelolabukuLayout.createSequentialGroup()
                         .addComponent(tambah2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -669,7 +669,7 @@ public class home extends javax.swing.JFrame {
         result_siswa.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         result_siswa.setText("Data Siswa");
 
-        tambah3.setBackground(new java.awt.Color(204, 0, 0));
+        tambah3.setBackground(new java.awt.Color(0, 102, 153));
 
         tambah3_value.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         tambah3_value.setForeground(new java.awt.Color(255, 255, 255));
@@ -685,14 +685,14 @@ public class home extends javax.swing.JFrame {
         tambah3.setLayout(tambah3Layout);
         tambah3Layout.setHorizontalGroup(
             tambah3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tambah3_value, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
+            .addComponent(tambah3_value, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
         );
         tambah3Layout.setVerticalGroup(
             tambah3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(tambah3_value, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
         );
 
-        ubah3.setBackground(new java.awt.Color(204, 0, 0));
+        ubah3.setBackground(new java.awt.Color(0, 102, 153));
 
         ubah3_value.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         ubah3_value.setForeground(new java.awt.Color(255, 255, 255));
@@ -708,14 +708,14 @@ public class home extends javax.swing.JFrame {
         ubah3.setLayout(ubah3Layout);
         ubah3Layout.setHorizontalGroup(
             ubah3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ubah3_value, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
+            .addComponent(ubah3_value, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
         );
         ubah3Layout.setVerticalGroup(
             ubah3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(ubah3_value, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
         );
 
-        hapus3.setBackground(new java.awt.Color(204, 0, 0));
+        hapus3.setBackground(new java.awt.Color(0, 102, 153));
 
         hapus3_value.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         hapus3_value.setForeground(new java.awt.Color(255, 255, 255));
@@ -731,14 +731,14 @@ public class home extends javax.swing.JFrame {
         hapus3.setLayout(hapus3Layout);
         hapus3Layout.setHorizontalGroup(
             hapus3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(hapus3_value, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
+            .addComponent(hapus3_value, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
         );
         hapus3Layout.setVerticalGroup(
             hapus3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(hapus3_value, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
         );
 
-        segarkan3.setBackground(new java.awt.Color(204, 0, 0));
+        segarkan3.setBackground(new java.awt.Color(0, 102, 153));
 
         segarkan3_value.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         segarkan3_value.setForeground(new java.awt.Color(255, 255, 255));
@@ -754,14 +754,14 @@ public class home extends javax.swing.JFrame {
         segarkan3.setLayout(segarkan3Layout);
         segarkan3Layout.setHorizontalGroup(
             segarkan3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(segarkan3_value, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
+            .addComponent(segarkan3_value, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
         );
         segarkan3Layout.setVerticalGroup(
             segarkan3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(segarkan3_value, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
         );
 
-        ubah5.setBackground(new java.awt.Color(204, 0, 0));
+        ubah5.setBackground(new java.awt.Color(0, 102, 153));
 
         reportSiswa_.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         reportSiswa_.setForeground(new java.awt.Color(255, 255, 255));
@@ -795,7 +795,7 @@ public class home extends javax.swing.JFrame {
                         .addComponent(result_siswa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(search_siswa, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 1003, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3)
                     .addGroup(kelolasiswaLayout.createSequentialGroup()
                         .addComponent(tambah3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -804,7 +804,7 @@ public class home extends javax.swing.JFrame {
                         .addComponent(hapus3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(ubah5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 276, Short.MAX_VALUE)
                         .addComponent(segarkan3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -867,7 +867,7 @@ public class home extends javax.swing.JFrame {
         result_peminjaman1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         result_peminjaman1.setText("Pengembalian Buku");
 
-        tambah4.setBackground(new java.awt.Color(204, 0, 0));
+        tambah4.setBackground(new java.awt.Color(0, 102, 153));
 
         tambahPengembalian.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         tambahPengembalian.setForeground(new java.awt.Color(255, 255, 255));
@@ -890,7 +890,7 @@ public class home extends javax.swing.JFrame {
             .addComponent(tambahPengembalian, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
         );
 
-        ubah4.setBackground(new java.awt.Color(204, 0, 0));
+        ubah4.setBackground(new java.awt.Color(0, 102, 153));
 
         ubah1_value1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         ubah1_value1.setForeground(new java.awt.Color(255, 255, 255));
@@ -913,7 +913,7 @@ public class home extends javax.swing.JFrame {
             .addComponent(ubah1_value1, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
         );
 
-        hapus4.setBackground(new java.awt.Color(204, 0, 0));
+        hapus4.setBackground(new java.awt.Color(0, 102, 153));
 
         hapus1_value1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         hapus1_value1.setForeground(new java.awt.Color(255, 255, 255));
@@ -936,7 +936,7 @@ public class home extends javax.swing.JFrame {
             .addComponent(hapus1_value1, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
         );
 
-        segarkan4.setBackground(new java.awt.Color(204, 0, 0));
+        segarkan4.setBackground(new java.awt.Color(0, 102, 153));
 
         segarkan1_value1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         segarkan1_value1.setForeground(new java.awt.Color(255, 255, 255));
@@ -952,14 +952,14 @@ public class home extends javax.swing.JFrame {
         segarkan4.setLayout(segarkan4Layout);
         segarkan4Layout.setHorizontalGroup(
             segarkan4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(segarkan1_value1, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
+            .addComponent(segarkan1_value1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
         );
         segarkan4Layout.setVerticalGroup(
             segarkan4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(segarkan1_value1, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
         );
 
-        ubah6.setBackground(new java.awt.Color(204, 0, 0));
+        ubah6.setBackground(new java.awt.Color(0, 102, 153));
 
         reportPengembalian_.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         reportPengembalian_.setForeground(new java.awt.Color(255, 255, 255));
@@ -993,7 +993,7 @@ public class home extends javax.swing.JFrame {
                         .addComponent(result_peminjaman1, javax.swing.GroupLayout.PREFERRED_SIZE, 657, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(search_peminjaman1, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 1003, Short.MAX_VALUE)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 1019, Short.MAX_VALUE)
                     .addGroup(pengembalianLayout.createSequentialGroup()
                         .addComponent(tambah4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1043,7 +1043,7 @@ public class home extends javax.swing.JFrame {
         userinfo.setLayout(userinfoLayout);
         userinfoLayout.setHorizontalGroup(
             userinfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1015, Short.MAX_VALUE)
+            .addGap(0, 1031, Short.MAX_VALUE)
         );
         userinfoLayout.setVerticalGroup(
             userinfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1053,7 +1053,7 @@ public class home extends javax.swing.JFrame {
         tab.addTab("Informasi Login", null, userinfo, "Informasi Login");
         userinfo.getAccessibleContext().setAccessibleName("Informasi Login");
 
-        footer.setBackground(new java.awt.Color(204, 0, 0));
+        footer.setBackground(new java.awt.Color(0, 102, 153));
 
         copyright.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         copyright.setForeground(new java.awt.Color(255, 255, 255));
