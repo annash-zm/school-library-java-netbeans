@@ -12,7 +12,13 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/BAPPENAS/Documents/school-library/src/reportSiswa/reportSiswa.jrxml</file>
+            <file>file:/C:/Users/BAPPENAS/Documents/school-library/src/pages/edit_pengembalian.java</file>
+            <file>file:/C:/Users/BAPPENAS/Documents/school-library/src/pages/edit_siswa.java</file>
+            <file>file:/C:/Users/BAPPENAS/Documents/school-library/src/pages/add_peminjaman.java</file>
+            <file>file:/C:/Users/BAPPENAS/Documents/school-library/src/pages/add_siswa.java</file>
+            <file>file:/C:/Users/BAPPENAS/Documents/school-library/src/pages/add_pengembalian.java</file>
+            <file>file:/C:/Users/BAPPENAS/Documents/school-library/src/pages/edit_peminjaman.java</file>
+            <file>file:/C:/Users/BAPPENAS/Documents/school-library/src/pages/add_buku.java</file>
             <file>file:/C:/Users/BAPPENAS/Documents/school-library/src/home.java</file>
         </group>
     </open-files>
