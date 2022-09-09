@@ -15,6 +15,7 @@ import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import net.sf.jasperreports.view.JasperViewer;
+
 import pages.*;
 
 /*
@@ -1423,7 +1424,7 @@ public class home extends javax.swing.JFrame {
                     java.sql.Statement st = con.createStatement();
                     st.executeUpdate(sql);
                     JOptionPane.showMessageDialog(null, "Data berhasil dihapus!", "Informasi", JOptionPane.INFORMATION_MESSAGE);
-                    tampil_peminjaman();
+                    tampil_pengembalian();
                 } catch (Exception e) {
                     JOptionPane.showMessageDialog(null, "Gagal menghapus data!", "Kesalahan", JOptionPane.ERROR_MESSAGE);
                 }
@@ -1454,9 +1455,11 @@ public class home extends javax.swing.JFrame {
             JasperReport jr = JasperCompileManager.compileReport(design);
             
             JRResultSetDataSource rsDataSource = new JRResultSetDataSource(hasil);
-            JasperPrint jp = JasperFillManager.fillReport(jr, new HashMap(), rsDataSource);
+            JasperPrint jp = JasperFillManager.fillReport(
+                    jr, new HashMap(), rsDataSource
+            );
             
-            JasperViewer.viewReport(jp);
+            JasperViewer.viewReport(jp,false);
             
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e, "Kesalahan", JOptionPane.ERROR_MESSAGE);
@@ -1482,7 +1485,7 @@ public class home extends javax.swing.JFrame {
             JRResultSetDataSource rsDataSource = new JRResultSetDataSource(hasil);
             JasperPrint jp = JasperFillManager.fillReport(jr, new HashMap(), rsDataSource);
             
-            JasperViewer.viewReport(jp);
+            JasperViewer.viewReport(jp,false);
             
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Gagal Mencetak !", "Kesalahan", JOptionPane.ERROR_MESSAGE);
@@ -1508,7 +1511,7 @@ public class home extends javax.swing.JFrame {
             JRResultSetDataSource rsDataSource = new JRResultSetDataSource(hasil);
             JasperPrint jp = JasperFillManager.fillReport(jr, new HashMap(), rsDataSource);
             
-            JasperViewer.viewReport(jp);
+            JasperViewer.viewReport(jp,false);
             
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Gagal Mencetak !", "Kesalahan", JOptionPane.ERROR_MESSAGE);
@@ -1535,7 +1538,7 @@ public class home extends javax.swing.JFrame {
             JRResultSetDataSource rsDataSource = new JRResultSetDataSource(hasil);
             JasperPrint jp = JasperFillManager.fillReport(jr, new HashMap(), rsDataSource);
             
-            JasperViewer.viewReport(jp);
+            JasperViewer.viewReport(jp,false);
             
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Gagal Mencetak !", "Kesalahan", JOptionPane.ERROR_MESSAGE);

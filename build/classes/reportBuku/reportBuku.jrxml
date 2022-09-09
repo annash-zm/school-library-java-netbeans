@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9a2e6238-5e43-4fc9-ad00-ed8d0e0f8350">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" >
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
@@ -34,21 +34,21 @@
 	<title>
 		<band height="136" splitType="Stretch">
 			<staticText>
-				<reportElement style="Title" x="221" y="28" width="393" height="34" uuid="ddd61eca-28cd-4de7-a3f8-4bf28051d25c"/>
+				<reportElement style="Title" x="221" y="28" width="393" height="34" />
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20" pdfFontName="Times-Roman"/>
 				</textElement>
 				<text><![CDATA[Perpustakaan SMP Assyairiyah Attahiriyah  ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="SubTitle" x="257" y="73" width="309" height="47" forecolor="#000000" uuid="cec9e138-8824-4535-8883-a7eaeb5af1c5"/>
+				<reportElement style="SubTitle" x="257" y="73" width="309" height="47" forecolor="#000000" />
 				<textElement textAlignment="Center">
 					<font fontName="Times New Roman" size="15" pdfFontName="Times-Roman"/>
 				</textElement>
 				<text><![CDATA[Assyairiyah RT 05/RW 11. Penggilian. Kec. Cakung, Kota Jakarta Timur. Daerah Khusus Ibu Kota Jakarta 13940]]></text>
 			</staticText>
 			<image>
-				<reportElement x="1" y="0" width="99" height="104" uuid="aaceb73c-7ca8-4fbc-9b7b-c96af81290dd"/>
+				<reportElement x="1" y="0" width="99" height="104" />
 				<imageExpression><![CDATA["C:\\Users\\BAPPENAS\\Documents\\school-library\\src\\reportBuku\\logo_atta.jpg"]]></imageExpression>
 			</image>
 		</band>
@@ -59,25 +59,25 @@
 	<columnHeader>
 		<band height="16" splitType="Stretch">
 			<line>
-				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="802" height="1" uuid="d8ef53c7-511a-4283-9eed-c32b817896af"/>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="802" height="1" />
 				<graphicElement>
 					<pen lineWidth="0.5" lineColor="#999999"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement style="Column header" x="0" y="0" width="200" height="15" forecolor="#736343" uuid="dec8cd69-7409-449b-93ef-0eae5cc2f898"/>
+				<reportElement style="Column header" x="0" y="0" width="200" height="15" forecolor="#736343" />
 				<text><![CDATA[Kode Buku]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Column header" x="200" y="0" width="200" height="15" forecolor="#736343" uuid="a1a6a35f-d861-461c-b6bd-53c9c8ecf610"/>
+				<reportElement style="Column header" x="200" y="0" width="200" height="15" forecolor="#736343" />
 				<text><![CDATA[Judul Buku]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Column header" x="400" y="0" width="200" height="15" forecolor="#736343" uuid="580fd16d-74e9-47e3-bd43-89639fad1780"/>
+				<reportElement style="Column header" x="400" y="0" width="200" height="15" forecolor="#736343" />
 				<text><![CDATA[Tanggal Terbit]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Column header" x="600" y="0" width="200" height="15" forecolor="#736343" uuid="64f194a0-6c90-47b6-bf23-b1f333b9021a"/>
+				<reportElement style="Column header" x="600" y="0" width="200" height="15" forecolor="#736343" />
 				<text><![CDATA[Pengarang]]></text>
 			</staticText>
 		</band>
@@ -85,21 +85,21 @@
 	<detail>
 		<band height="15" splitType="Stretch">
 			<frame>
-				<reportElement style="Row" mode="Opaque" x="0" y="0" width="802" height="15" uuid="36c39104-35b8-42ba-a350-ab267893384f"/>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="802" height="15" />
 				<textField isStretchWithOverflow="true">
-					<reportElement style="Detail" x="0" y="0" width="200" height="15" uuid="d57a588f-b5cc-4f7e-b7b7-eb17f2075b74"/>
+					<reportElement style="Detail" x="0" y="0" width="200" height="15" />
 					<textFieldExpression><![CDATA[$F{kode}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true">
-					<reportElement style="Detail" x="200" y="0" width="200" height="15" uuid="7a04e617-e8b2-4cbd-8e42-b47511cfcf3f"/>
+					<reportElement style="Detail" x="200" y="0" width="200" height="15" />
 					<textFieldExpression><![CDATA[$F{judul}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true">
-					<reportElement style="Detail" x="400" y="0" width="200" height="15" uuid="f184634b-8540-48c5-bb51-e6baa2a6edf2"/>
+					<reportElement style="Detail" x="400" y="0" width="200" height="15" />
 					<textFieldExpression><![CDATA[$F{tanggal}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true">
-					<reportElement style="Detail" x="600" y="0" width="200" height="15" uuid="8c8df3e6-9361-4243-a222-731b488b218a"/>
+					<reportElement style="Detail" x="600" y="0" width="200" height="15" />
 					<textFieldExpression><![CDATA[$F{pengarang}]]></textFieldExpression>
 				</textField>
 			</frame>
@@ -108,7 +108,7 @@
 	<columnFooter>
 		<band height="6" splitType="Stretch">
 			<line>
-				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="802" height="1" uuid="1e69eee9-035c-44a0-91c9-bda5777cd67c"/>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="802" height="1" />
 				<graphicElement>
 					<pen lineWidth="0.5" lineColor="#999999"/>
 				</graphicElement>
@@ -118,23 +118,23 @@
 	<pageFooter>
 		<band height="25" splitType="Stretch">
 			<frame>
-				<reportElement mode="Opaque" x="-21" y="1" width="843" height="24" forecolor="#D0B48E" backcolor="#F2EBDF" uuid="9d3028f8-aff4-45ef-b04a-b2a5bab213f4"/>
+				<reportElement mode="Opaque" x="-21" y="1" width="843" height="24" forecolor="#D0B48E" backcolor="#F2EBDF" />
 				<textField evaluationTime="Report">
-					<reportElement style="Column header" x="783" y="1" width="40" height="20" forecolor="#736343" uuid="a9ef7d2e-444e-4f1d-9510-2024489ff639"/>
+					<reportElement style="Column header" x="783" y="1" width="40" height="20" forecolor="#736343" />
 					<textElement verticalAlignment="Middle">
 						<font size="10" isBold="false"/>
 					</textElement>
 					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement style="Column header" x="703" y="1" width="80" height="20" forecolor="#736343" uuid="9ece95ed-ea4c-40e7-9490-66e916614ae7"/>
+					<reportElement style="Column header" x="703" y="1" width="80" height="20" forecolor="#736343" />
 					<textElement textAlignment="Right" verticalAlignment="Middle">
 						<font size="10" isBold="false"/>
 					</textElement>
 					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
 				</textField>
 				<textField pattern="EEEEE dd MMMMM yyyy">
-					<reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343" uuid="ccd855c1-d79f-4daf-86ca-2ccf14c61a29"/>
+					<reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343" />
 					<textElement verticalAlignment="Middle">
 						<font size="10" isBold="false"/>
 					</textElement>
