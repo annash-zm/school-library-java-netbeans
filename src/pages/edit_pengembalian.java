@@ -352,7 +352,7 @@ public class edit_pengembalian extends javax.swing.JDialog {
         body.setLayout(bodyLayout);
         bodyLayout.setHorizontalGroup(
             bodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(header, javax.swing.GroupLayout.DEFAULT_SIZE, 702, Short.MAX_VALUE)
+            .addComponent(header, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
             .addGroup(bodyLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(bodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -406,14 +406,11 @@ public class edit_pengembalian extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(body, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(body, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(body, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(body, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -524,7 +521,7 @@ public class edit_pengembalian extends javax.swing.JDialog {
         id_pengembalian.setText(id);
         try {
             Connection con = new database.connection().configDB();
-            String sql = "SELECT * FROM pengembalian WHERE id = '"+id+"'";
+            String sql = "SELECT * FROM pengembalian WHERE id_pengembalian = '"+id+"'";
             java.sql.Statement st = con.createStatement();
             java.sql.ResultSet rs = st.executeQuery(sql);
             
@@ -565,7 +562,7 @@ public class edit_pengembalian extends javax.swing.JDialog {
         
         try {
             Connection con = new database.connection().configDB();
-            String sql = "SELECT * FROM murid ORDER BY id ASC";
+            String sql = "SELECT * FROM murid ORDER BY id_siswa ASC";
             java.sql.Statement st = con.createStatement();
             java.sql.ResultSet rs = st.executeQuery(sql);
             
@@ -601,7 +598,7 @@ public class edit_pengembalian extends javax.swing.JDialog {
                     + "OR judul LIKE '%"+query+"%' "
                     + "OR tanggal LIKE '%"+query+"%' "
                     + "OR pengarang LIKE '%"+query+"%' "
-                    + "ORDER BY id ASC";
+                    + "ORDER BY id_buku ASC";
             java.sql.Statement stmt = con.createStatement();
             java.sql.ResultSet hasil = stmt.executeQuery(sql);
             
@@ -632,15 +629,15 @@ public class edit_pengembalian extends javax.swing.JDialog {
             String sql = "SELECT * FROM murid WHERE BINARY "
                     + "nis LIKE '%"+query+"%' "
                     + "OR nama LIKE '%"+query+"%' "
-                    + "OR jurusan LIKE '%"+query+"%' "
-                    + "ORDER BY id ASC";
+                    + "OR kelas LIKE '%"+query+"%' "
+                    + "ORDER BY id_siswa ASC";
             java.sql.Statement stmt = con.createStatement();
             java.sql.ResultSet hasil = stmt.executeQuery(sql);
             
             while (hasil.next()) {
                 String nis = hasil.getString("nis");
                 String nama = hasil.getString("nama");
-                String jurusan = hasil.getString("jurusan");
+                String jurusan = hasil.getString("kelas");
                 
                 String[] data = {nis, nama, jurusan};
                 tbl2.addRow(data);
@@ -665,7 +662,7 @@ public class edit_pengembalian extends javax.swing.JDialog {
         
         try {
             Connection con = new database.connection().configDB();
-            String sql = "SELECT * FROM peminjaman WHERE nis ="+nis.getText()+" ORDER BY id ASC";
+            String sql = "SELECT * FROM peminjaman WHERE nis ="+nis.getText()+" ORDER BY id_peminjaman ASC";
             java.sql.Statement st = con.createStatement();
             java.sql.ResultSet rs = st.executeQuery(sql);
             
@@ -716,7 +713,7 @@ public class edit_pengembalian extends javax.swing.JDialog {
         if (!empty(gettanggal)) {
             try {
                 Connection con = new database.connection().configDB();
-                String sql = "UPDATE pengembalian SET nis = ?, nama = ?, kelas = ?, kode_buku = ?, judul_buku = ?, tanggal_kembali = ? WHERE id = '"+id+"'";
+                String sql = "UPDATE pengembalian SET nis = ?, nama = ?, kelas = ?, kode_buku = ?, judul_buku = ?, tanggal_kembali = ? WHERE id_pengembalian = '"+id+"'";
                 java.sql.PreparedStatement stat = con.prepareStatement(sql);
                 stat.setString(1, getnis);
                 stat.setString(2, getnama);

@@ -279,7 +279,7 @@ public class edit_buku extends javax.swing.JDialog {
         if (!empty(gettanggal)) {
             try {
                 Connection con = new database.connection().configDB();
-                String sql = "UPDATE buku SET jenis = ?, tanggal = ?, pengarang = ? WHERE id = '"+idnya.getText()+"'";
+                String sql = "UPDATE buku SET jenis = ?, tanggal = ?, pengarang = ? WHERE id_buku = '"+idnya.getText()+"'";
                 java.sql.PreparedStatement stat = con.prepareStatement(sql);
                 stat.setString(1, getjenis+"");
                 stat.setString(2, gettanggal);
@@ -346,7 +346,7 @@ public class edit_buku extends javax.swing.JDialog {
     private void tampilin(String id) {
         try {
             Connection con = new database.connection().configDB();
-            String sql = "SELECT * FROM buku WHERE id = '"+id+"'";
+            String sql = "SELECT * FROM buku WHERE id_buku = '"+id+"'";
             java.sql.Statement stat = con.createStatement();
             java.sql.ResultSet hasil = stat.executeQuery(sql);
             

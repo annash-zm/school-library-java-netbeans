@@ -486,7 +486,7 @@ public class add_peminjaman extends javax.swing.JDialog {
         
         try {
             Connection con = new database.connection().configDB();
-            String sql = "SELECT * FROM buku ORDER BY id ASC";
+            String sql = "SELECT * FROM buku ORDER BY id_buku ASC";
             java.sql.Statement st = con.createStatement();
             java.sql.ResultSet rs = st.executeQuery(sql);
             
@@ -515,7 +515,7 @@ public class add_peminjaman extends javax.swing.JDialog {
         
         try {
             Connection con = new database.connection().configDB();
-            String sql = "SELECT * FROM murid ORDER BY id ASC";
+            String sql = "SELECT * FROM murid ORDER BY id_siswa ASC";
             java.sql.Statement st = con.createStatement();
             java.sql.ResultSet rs = st.executeQuery(sql);
             
@@ -551,7 +551,7 @@ public class add_peminjaman extends javax.swing.JDialog {
                     + "OR judul LIKE '%"+query+"%' "
                     + "OR tanggal LIKE '%"+query+"%' "
                     + "OR pengarang LIKE '%"+query+"%' "
-                    + "ORDER BY id ASC";
+                    + "ORDER BY id_buku ASC";
             java.sql.Statement stmt = con.createStatement();
             java.sql.ResultSet hasil = stmt.executeQuery(sql);
             
@@ -583,7 +583,7 @@ public class add_peminjaman extends javax.swing.JDialog {
                     + "nis LIKE '%"+query+"%' "
                     + "OR nama LIKE '%"+query+"%' "
                     + "OR kelas LIKE '%"+query+"%' "
-                    + "ORDER BY id ASC";
+                    + "ORDER BY id_siswa ASC";
             java.sql.Statement stmt = con.createStatement();
             java.sql.ResultSet hasil = stmt.executeQuery(sql);
             

@@ -13,6 +13,7 @@
 			<style backcolor="#E6DAC3"/>
 		</conditionalStyle>
 	</style>
+	<parameter name="nama_petugas" class="java.lang.String"/>
 	<queryString language="SQL">
 		<![CDATA[select * from murid]]>
 	</queryString>
@@ -39,23 +40,30 @@
 	</background>
 	<title>
 		<band height="136" splitType="Stretch">
-			<image>
-				<reportElement x="1" y="0" width="110" height="109" />
-				<imageExpression><![CDATA["C:\\Users\\BAPPENAS\\Documents\\school-library\\src\\reportSiswa\\logo_atta.jpg"]]></imageExpression>
-			</image>
 			<staticText>
-				<reportElement style="Title" x="227" y="26" width="393" height="34" />
+				<reportElement style="Title" x="233" y="13" width="393" height="34" />
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20" pdfFontName="Times-Roman"/>
 				</textElement>
 				<text><![CDATA[Perpustakaan SMP Assyairiyah Attahiriyah  ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="SubTitle" x="267" y="66" width="309" height="47" forecolor="#000000" />
+				<reportElement style="SubTitle" x="230" y="48" width="393" height="47" forecolor="#000000" />
 				<textElement textAlignment="Center">
 					<font fontName="Times New Roman" size="15" pdfFontName="Times-Roman"/>
 				</textElement>
 				<text><![CDATA[Assyairiyah RT 05/RW 11. Penggilian. Kec. Cakung, Kota Jakarta Timur. Daerah Khusus Ibu Kota Jakarta 13940]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="115" height="113" />
+				<imageExpression><![CDATA["/Users/Annash/Documents/school-library/src/reportSiswa/logo_atta.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="233" y="97" width="393" height="34" forecolor="#736343" />
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Laporan Data Siswa]]></text>
 			</staticText>
 		</band>
 	</title>
@@ -128,13 +136,29 @@
 		</band>
 	</detail>
 	<columnFooter>
-		<band height="6" splitType="Stretch">
-			<line>
-				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="802" height="1" />
-				<graphicElement>
-					<pen lineWidth="0.5" lineColor="#999999"/>
-				</graphicElement>
-			</line>
+		<band height="165" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" x="542" y="21" width="48" height="15" forecolor="#000000" />
+				<text><![CDATA[Jakarta, ]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="592" y="21" width="180" height="15" />
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="544" y="107" width="242" height="15" />
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nama_petugas}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="544" y="128" width="148" height="15" forecolor="#000000" />
+				<text><![CDATA[Petugas Perpustakaan]]></text>
+			</staticText>
 		</band>
 	</columnFooter>
 	<pageFooter>
@@ -154,13 +178,6 @@
 						<font size="10" isBold="false"/>
 					</textElement>
 					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
-				</textField>
-				<textField pattern="EEEEE dd MMMMM yyyy">
-					<reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343" />
-					<textElement verticalAlignment="Middle">
-						<font size="10" isBold="false"/>
-					</textElement>
-					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 				</textField>
 			</frame>
 		</band>

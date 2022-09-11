@@ -333,7 +333,8 @@ public class login extends javax.swing.JFrame {
 
                 if (rs.next()) {
                     if (username.getText().equals(rs.getString("username")) && password.getText().equals(rs.getString("password"))) {
-                        home n = new home();
+                        //System.out.print(rs.getString("username"));
+                        home n = new home(rs.getString("nama_lengkap"));
                         n.setVisible(true);
                         this.setVisible(false);
                     }

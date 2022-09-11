@@ -56,12 +56,16 @@ public class home extends javax.swing.JFrame {
     /**
      * Creates new form home
      */
-    public home() {
+    public home(String username) {
         super("Tugas Akhir");
         Dimension screen=Toolkit.getDefaultToolkit().getScreenSize();
         this.setSize(screen.width-250,screen.height-150);
         //setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
         setResizable(false);
+        //System.out.print(username);
+        
+        Locale locale = new Locale ("id","ID");
+        Locale.setDefault(locale);
         
         setLocationRelativeTo(null);
         this.setUndecorated(true);
@@ -89,6 +93,8 @@ public class home extends javax.swing.JFrame {
         tampil_buku();
         tampil_siswa();
         tampil_pengembalian();
+        userName.setVisible(false);
+        setUserName(username);
     }
 
     /**
@@ -170,6 +176,7 @@ public class home extends javax.swing.JFrame {
         userinfo = new javax.swing.JPanel();
         footer = new javax.swing.JPanel();
         copyright = new javax.swing.JLabel();
+        userName = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -863,6 +870,10 @@ public class home extends javax.swing.JFrame {
             }
         });
         jScrollPane4.setViewportView(tb_pengembalian);
+        if (tb_pengembalian.getColumnModel().getColumnCount() > 0) {
+            tb_pengembalian.getColumnModel().getColumn(4).setHeaderValue("Judul Buku");
+            tb_pengembalian.getColumnModel().getColumn(5).setHeaderValue("Tanggal Pinjam");
+        }
 
         result_pengembalian.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         result_pengembalian.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -1051,7 +1062,7 @@ public class home extends javax.swing.JFrame {
             .addGap(0, 469, Short.MAX_VALUE)
         );
 
-        tab.addTab("Informasi Login", null, userinfo, "Informasi Login");
+        tab.addTab("Kelola Admin", null, userinfo, "Informasi Login");
         userinfo.getAccessibleContext().setAccessibleName("Informasi Login");
 
         footer.setBackground(new java.awt.Color(0, 102, 153));
@@ -1059,7 +1070,7 @@ public class home extends javax.swing.JFrame {
         copyright.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         copyright.setForeground(new java.awt.Color(255, 255, 255));
         copyright.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        copyright.setText("© year Tugas Akhir. All Right Reserved.");
+        copyright.setText("© year Yudhistira. All Right Reserved.");
 
         javax.swing.GroupLayout footerLayout = new javax.swing.GroupLayout(footer);
         footer.setLayout(footerLayout);
@@ -1092,15 +1103,27 @@ public class home extends javax.swing.JFrame {
 
         tab.getAccessibleContext().setAccessibleName("");
 
+        userName.setText("jLabel1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(body, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(495, 495, 495)
+                    .addComponent(userName)
+                    .addContainerGap(496, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(body, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(293, 293, 293)
+                    .addComponent(userName)
+                    .addContainerGap(293, Short.MAX_VALUE)))
         );
 
         pack();
@@ -1128,16 +1151,6 @@ public class home extends javax.swing.JFrame {
         // TODO add your handling code here:
         new pages.about(this, rootPaneCheckingEnabled).setVisible(true);
     }//GEN-LAST:event_aboutMouseClicked
-
-    private void userinfoComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_userinfoComponentShown
-        // TODO add your handling code here:
-        this.dispose();
-        new user(this, rootPaneCheckingEnabled).setVisible(true);
-    }//GEN-LAST:event_userinfoComponentShown
-
-    private void userinfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userinfoMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_userinfoMouseClicked
 
     private void segarkan3_valueMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_segarkan3_valueMouseClicked
         // TODO add your handling code here:
@@ -1185,7 +1198,7 @@ public class home extends javax.swing.JFrame {
                 java.sql.ResultSet rs = st.executeQuery(sql);
 
                 if (rs.next()) {
-                    String id = rs.getString("id");
+                    String id = rs.getString("id_siswa");
                     new pages.edit_siswa(this, rootPaneCheckingEnabled, id).setVisible(true);
                 }
             } catch (Exception e) {
@@ -1259,7 +1272,7 @@ public class home extends javax.swing.JFrame {
                 java.sql.ResultSet rs = st.executeQuery(sql);
 
                 if (rs.next()) {
-                    String id = rs.getString("id");
+                    String id = rs.getString("id_buku");
                     new pages.edit_buku(this, rootPaneCheckingEnabled, id).setVisible(true);
                 }
             } catch (Exception e) {
@@ -1335,7 +1348,7 @@ public class home extends javax.swing.JFrame {
                 java.sql.ResultSet rs = st.executeQuery(sql);
 
                 if (rs.next()) {
-                    String id = rs.getString("id");
+                    String id = rs.getString("id_peminjaman");
                     new pages.edit_peminjaman(this, rootPaneCheckingEnabled, id).setVisible(true);
                 }
             } catch (Exception e) {
@@ -1397,7 +1410,7 @@ public class home extends javax.swing.JFrame {
                 java.sql.ResultSet rs = st.executeQuery(sql);
 
                 if (rs.next()) {
-                    String id = rs.getString("id");
+                    String id = rs.getString("id_pengembalian");
                     new pages.edit_pengembalian(this, rootPaneCheckingEnabled, id).setVisible(true);
                 }
             } catch (Exception e) {
@@ -1455,8 +1468,10 @@ public class home extends javax.swing.JFrame {
             JasperReport jr = JasperCompileManager.compileReport(design);
             
             JRResultSetDataSource rsDataSource = new JRResultSetDataSource(hasil);
+            Map params = new HashMap();
+            params.put("nama_petugas",userName.getText());
             JasperPrint jp = JasperFillManager.fillReport(
-                    jr, new HashMap(), rsDataSource
+                    jr, params, rsDataSource
             );
             
             JasperViewer.viewReport(jp,false);
@@ -1483,7 +1498,9 @@ public class home extends javax.swing.JFrame {
             JasperReport jr = JasperCompileManager.compileReport(design);
             
             JRResultSetDataSource rsDataSource = new JRResultSetDataSource(hasil);
-            JasperPrint jp = JasperFillManager.fillReport(jr, new HashMap(), rsDataSource);
+            Map params = new HashMap();
+            params.put("nama_petugas",userName.getText());
+            JasperPrint jp = JasperFillManager.fillReport(jr, params, rsDataSource);
             
             JasperViewer.viewReport(jp,false);
             
@@ -1509,7 +1526,9 @@ public class home extends javax.swing.JFrame {
             JasperReport jr = JasperCompileManager.compileReport(design);
             
             JRResultSetDataSource rsDataSource = new JRResultSetDataSource(hasil);
-            JasperPrint jp = JasperFillManager.fillReport(jr, new HashMap(), rsDataSource);
+            Map params = new HashMap();
+            params.put("nama_petugas",userName.getText());
+            JasperPrint jp = JasperFillManager.fillReport(jr, params, rsDataSource);
             
             JasperViewer.viewReport(jp,false);
             
@@ -1536,7 +1555,9 @@ public class home extends javax.swing.JFrame {
             JasperReport jr = JasperCompileManager.compileReport(design);
             
             JRResultSetDataSource rsDataSource = new JRResultSetDataSource(hasil);
-            JasperPrint jp = JasperFillManager.fillReport(jr, new HashMap(), rsDataSource);
+            Map params = new HashMap();
+            params.put("nama_petugas",userName.getText());
+            JasperPrint jp = JasperFillManager.fillReport(jr, params, rsDataSource);
             
             JasperViewer.viewReport(jp,false);
             
@@ -1546,6 +1567,16 @@ public class home extends javax.swing.JFrame {
             dispose();
         }
     }//GEN-LAST:event_reportPengembalian_MouseClicked
+
+    private void userinfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userinfoMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_userinfoMouseClicked
+
+    private void userinfoComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_userinfoComponentShown
+        // TODO add your handling code here:
+        this.dispose();
+        new user(this, rootPaneCheckingEnabled, userName.getText()).setVisible(true);
+    }//GEN-LAST:event_userinfoComponentShown
 
     /**
      * @param args the command line arguments
@@ -1577,7 +1608,7 @@ public class home extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new home().setVisible(true);
+                new home(0+"").setVisible(true);
             }
         });
     }
@@ -1627,7 +1658,7 @@ public class home extends javax.swing.JFrame {
     private void copyright() {
         java.util.Date sekarang = new java.util.Date();
         java.text.SimpleDateFormat kal = new java.text.SimpleDateFormat("yyyy") ;
-        copyright.setText("© "+kal.format(sekarang)+" Tugas Akhir. All Right Reserved.");
+        copyright.setText("© "+kal.format(sekarang)+" Yudhistira. All Right Reserved.");
     }
     
     private void tampil_peminjaman() {
@@ -1640,7 +1671,7 @@ public class home extends javax.swing.JFrame {
         tb_peminjaman.setModel(tbl1);
         try {
             Connection con = new database.connection().configDB();
-            String sql = "SELECT * FROM peminjaman ORDER BY id ASC";
+            String sql = "SELECT * FROM peminjaman ORDER BY id_peminjaman ASC";
             java.sql.Statement stat = con.createStatement();
             java.sql.ResultSet hasil = stat.executeQuery(sql);
             
@@ -1672,7 +1703,7 @@ public class home extends javax.swing.JFrame {
         tb_buku.setModel(tbl2);
         try {
             Connection con = new database.connection().configDB();
-            String sql = "SELECT * FROM buku ORDER BY id ASC";
+            String sql = "SELECT * FROM buku ORDER BY id_buku ASC";
             java.sql.Statement stat = con.createStatement();
             java.sql.ResultSet hasil = stat.executeQuery(sql);
             
@@ -1718,7 +1749,7 @@ public class home extends javax.swing.JFrame {
         
         try {
             Connection con = new database.connection().configDB();
-            String sql = "SELECT * FROM murid ORDER BY id ASC";
+            String sql = "SELECT * FROM murid ORDER BY id_siswa ASC";
             java.sql.Statement stat = con.createStatement();
             java.sql.ResultSet hasil = stat.executeQuery(sql);
             
@@ -1751,7 +1782,7 @@ public class home extends javax.swing.JFrame {
         
         try {
             Connection con = new database.connection().configDB();
-            String sql = "SELECT * FROM pengembalian ORDER BY id ASC";
+            String sql = "SELECT * FROM pengembalian ORDER BY id_pengembalian ASC";
             java.sql.Statement stat = con.createStatement();
             java.sql.ResultSet hasil = stat.executeQuery(sql);
             
@@ -1793,7 +1824,7 @@ public class home extends javax.swing.JFrame {
                     + "OR kode LIKE '%"+query+"%' "
                     + "OR judul LIKE '%"+query+"%' "
                     + "OR tanggal LIKE '%"+query+"%' "
-                    + "ORDER BY id ASC";
+                    + "ORDER BY id_peminjaman ASC";
             java.sql.Statement stmt = con.createStatement();
             java.sql.ResultSet hasil = stmt.executeQuery(sql);
             
@@ -1837,7 +1868,7 @@ public class home extends javax.swing.JFrame {
                     + "OR kode_buku LIKE '%"+query+"%' "
                     + "OR judul_buku LIKE '%"+query+"%' "
                     + "OR tanggal_kembali LIKE '%"+query+"%' "
-                    + "ORDER BY id ASC";
+                    + "ORDER BY id_pengembalian ASC";
             java.sql.Statement stmt = con.createStatement();
             java.sql.ResultSet hasil = stmt.executeQuery(sql);
             
@@ -1880,7 +1911,7 @@ public class home extends javax.swing.JFrame {
                     + "OR judul LIKE '%"+query+"%' "
                     + "OR tanggal LIKE '%"+query+"%' "
                     + "OR pengarang LIKE '%"+query+"%' "
-                    + "ORDER BY id ASC";
+                    + "ORDER BY id_buku ASC";
             java.sql.Statement stmt = con.createStatement();
             java.sql.ResultSet hasil = stmt.executeQuery(sql);
             
@@ -1937,7 +1968,7 @@ public class home extends javax.swing.JFrame {
                     + "OR no_telp LIKE '%"+query+"%' "
                     + "OR kelas LIKE '%"+query+"%' "
                     + "OR tanggal LIKE '%"+query+"%' "
-                    + "ORDER BY id ASC";
+                    + "ORDER BY id_siswa ASC";
             java.sql.Statement stmt = con.createStatement();
             java.sql.ResultSet hasil = stmt.executeQuery(sql);
             
@@ -1959,6 +1990,10 @@ public class home extends javax.swing.JFrame {
                 result_siswa.setText("");
             }
         } catch (Exception e) {}
+    }
+    
+    public void setUserName(String username){
+        userName.setText(username);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -2031,6 +2066,7 @@ public class home extends javax.swing.JFrame {
     private javax.swing.JPanel ubah4;
     private javax.swing.JPanel ubah5;
     private javax.swing.JPanel ubah6;
+    private javax.swing.JLabel userName;
     private javax.swing.JPanel userinfo;
     // End of variables declaration//GEN-END:variables
 }

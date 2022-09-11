@@ -520,7 +520,7 @@ public class edit_peminjaman extends javax.swing.JDialog {
         id_peminjaman.setText(id);
         try {
             Connection con = new database.connection().configDB();
-            String sql = "SELECT * FROM peminjaman WHERE id = '"+id+"'";
+            String sql = "SELECT * FROM peminjaman WHERE id_peminjaman = '"+id+"'";
             java.sql.Statement st = con.createStatement();
             java.sql.ResultSet rs = st.executeQuery(sql);
             
@@ -561,7 +561,7 @@ public class edit_peminjaman extends javax.swing.JDialog {
         
         try {
             Connection con = new database.connection().configDB();
-            String sql = "SELECT * FROM buku ORDER BY id ASC";
+            String sql = "SELECT * FROM buku ORDER BY id_buku ASC";
             java.sql.Statement st = con.createStatement();
             java.sql.ResultSet rs = st.executeQuery(sql);
             
@@ -590,7 +590,7 @@ public class edit_peminjaman extends javax.swing.JDialog {
         
         try {
             Connection con = new database.connection().configDB();
-            String sql = "SELECT * FROM murid ORDER BY id ASC";
+            String sql = "SELECT * FROM murid ORDER BY id_siswa ASC";
             java.sql.Statement st = con.createStatement();
             java.sql.ResultSet rs = st.executeQuery(sql);
             
@@ -626,7 +626,7 @@ public class edit_peminjaman extends javax.swing.JDialog {
                     + "OR judul LIKE '%"+query+"%' "
                     + "OR tanggal LIKE '%"+query+"%' "
                     + "OR pengarang LIKE '%"+query+"%' "
-                    + "ORDER BY id ASC";
+                    + "ORDER BY id_buku ASC";
             java.sql.Statement stmt = con.createStatement();
             java.sql.ResultSet hasil = stmt.executeQuery(sql);
             
@@ -658,7 +658,7 @@ public class edit_peminjaman extends javax.swing.JDialog {
                     + "nis LIKE '%"+query+"%' "
                     + "OR nama LIKE '%"+query+"%' "
                     + "OR kelas LIKE '%"+query+"%' "
-                    + "ORDER BY id ASC";
+                    + "ORDER BY id_siswa ASC";
             java.sql.Statement stmt = con.createStatement();
             java.sql.ResultSet hasil = stmt.executeQuery(sql);
             
@@ -715,7 +715,7 @@ public class edit_peminjaman extends javax.swing.JDialog {
         if (!empty(gettanggal)) {
             try {
                 Connection con = new database.connection().configDB();
-                String sql = "UPDATE peminjaman SET nis = ?, nama = ?, kelas = ?, kode = ?, judul = ?, tanggal = ? WHERE id = '"+id+"'";
+                String sql = "UPDATE peminjaman SET nis = ?, nama = ?, kelas = ?, kode = ?, judul = ?, tanggal = ? WHERE id_peminjaman = '"+id+"'";
                 java.sql.PreparedStatement stat = con.prepareStatement(sql);
                 stat.setString(1, getnis);
                 stat.setString(2, getnama);

@@ -314,7 +314,7 @@ public class edit_siswa extends javax.swing.JDialog {
         if (!empty(getnama) || !empty(gettempat) || !empty(gettl) || !empty(gettanggal)) {
             try {
                 Connection con = new database.connection().configDB();
-                String sql = "UPDATE murid SET nama = ?, alamat = ?, no_telp = ?, kelas = ?, tanggal = ? WHERE id = '"+idnya.getText()+"'";
+                String sql = "UPDATE murid SET nama = ?, alamat = ?, no_telp = ?, kelas = ?, tanggal = ? WHERE id_siswa = '"+idnya.getText()+"'";
                 java.sql.PreparedStatement stat = con.prepareStatement(sql);
                 stat.setString(1, getnama);
                 stat.setString(2, gettempat);
@@ -385,7 +385,7 @@ public class edit_siswa extends javax.swing.JDialog {
     public void tampil(String id) {
         try {
             Connection con = new database.connection().configDB();
-            String sql = "SELECT * FROM murid WHERE id = '"+id+"'";
+            String sql = "SELECT * FROM murid WHERE id_siswa = '"+id+"'";
             java.sql.Statement stat = con.createStatement();
             java.sql.ResultSet hasil = stat.executeQuery(sql);
             
