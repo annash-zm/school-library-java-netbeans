@@ -23,13 +23,12 @@ import pages.*;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author User
  */
 public class home extends javax.swing.JFrame {
-    
+
     DefaultTableModel tbl1 = new DefaultTableModel() {
         public boolean isCellEditable(int row, int column) {
             return false;
@@ -45,31 +44,32 @@ public class home extends javax.swing.JFrame {
             return false;
         }
     };
-    
+
     DefaultTableModel tbl4 = new DefaultTableModel() {
         public boolean isCellEditable(int row, int column) {
             return false;
         }
     };
 
-     private static Point point = new Point();
+    private static Point point = new Point();
+
     /**
      * Creates new form home
      */
     public home(String username) {
         super("Tugas Akhir");
-        Dimension screen=Toolkit.getDefaultToolkit().getScreenSize();
-        this.setSize(screen.width-250,screen.height-150);
+        Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setSize(screen.width - 250, screen.height - 150);
         //setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
         setResizable(false);
         //System.out.print(username);
-        
-        Locale locale = new Locale ("id","ID");
+
+        Locale locale = new Locale("id", "ID");
         Locale.setDefault(locale);
-        
+
         setLocationRelativeTo(null);
         this.setUndecorated(true);
-        
+
         this.addMouseListener(new MouseAdapter() {
             public void mousePressed(MouseEvent e) {
                 point.x = e.getX();
@@ -82,13 +82,13 @@ public class home extends javax.swing.JFrame {
                 setLocation(p.x + e.getX() - point.x, p.y + e.getY() - point.y);
             }
         });
-        
+
         initComponents();
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-        
+
         timenow();
         copyright();
-        
+
         tampil_peminjaman();
         tampil_buku();
         tampil_siswa();
@@ -112,6 +112,7 @@ public class home extends javax.swing.JFrame {
         close_btn = new javax.swing.JLabel();
         timenow = new javax.swing.JLabel();
         about = new javax.swing.JLabel();
+        signOut = new javax.swing.JLabel();
         tab = new javax.swing.JTabbedPane();
         peminjaman = new javax.swing.JPanel();
         search_peminjaman = new placeholder.search();
@@ -220,6 +221,15 @@ public class home extends javax.swing.JFrame {
             }
         });
 
+        signOut.setFont(new java.awt.Font("Helvetica", 1, 12)); // NOI18N
+        signOut.setForeground(new java.awt.Color(255, 255, 255));
+        signOut.setText("SIGN OUT");
+        signOut.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                signOutMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout headerLayout = new javax.swing.GroupLayout(header);
         header.setLayout(headerLayout);
         headerLayout.setHorizontalGroup(
@@ -229,6 +239,8 @@ public class home extends javax.swing.JFrame {
                 .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(timenow, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(signOut, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(about, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -240,7 +252,8 @@ public class home extends javax.swing.JFrame {
             .addGroup(headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(title, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
                 .addComponent(close_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(about))
+                .addComponent(about)
+                .addComponent(signOut))
             .addComponent(timenow, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -1166,12 +1179,12 @@ public class home extends javax.swing.JFrame {
             String nis = tbl3.getValueAt(baris, 0).toString();
             String nama = tbl3.getValueAt(baris, 1).toString();
 
-            int x = JOptionPane.showConfirmDialog(null, "Data Siswa dengan\n\nNIS: "+nis+"\nNama Lengkap: "+nama+"\n\nakan Anda hapus, yakin?\nData peminjaman dengan SISWA ini juga akan ikut terhapus!", "Konfirmasi", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+            int x = JOptionPane.showConfirmDialog(null, "Data Siswa dengan\n\nNIS: " + nis + "\nNama Lengkap: " + nama + "\n\nakan Anda hapus, yakin?\nData peminjaman dengan SISWA ini juga akan ikut terhapus!", "Konfirmasi", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
             if (x == JOptionPane.YES_OPTION) {
                 try {
                     Connection con = new database.connection().configDB();
-                    String sql = "DELETE FROM murid WHERE nis = '"+nis+"'";
-                    String sql2 = "DELETE FROM peminjaman WHERE nis = '"+nis+"'";
+                    String sql = "DELETE FROM murid WHERE nis = '" + nis + "'";
+                    String sql2 = "DELETE FROM peminjaman WHERE nis = '" + nis + "'";
                     java.sql.Statement st = con.createStatement();
                     st.executeUpdate(sql);
                     st.executeUpdate(sql2);
@@ -1193,7 +1206,7 @@ public class home extends javax.swing.JFrame {
             String nis = tbl3.getValueAt(baris, 0).toString();
             try {
                 Connection con = new database.connection().configDB();
-                String sql = "SELECT * FROM murid WHERE nis = '"+nis+"'";
+                String sql = "SELECT * FROM murid WHERE nis = '" + nis + "'";
                 java.sql.Statement st = con.createStatement();
                 java.sql.ResultSet rs = st.executeQuery(sql);
 
@@ -1240,12 +1253,12 @@ public class home extends javax.swing.JFrame {
             String kode = tbl2.getValueAt(baris, 0).toString();
             String judul = tbl2.getValueAt(baris, 1).toString();
 
-            int x = JOptionPane.showConfirmDialog(null, "Data Buku dengan\n\nJudul: "+judul+"\nKode Buku: "+kode+"\n\nakan Anda hapus, yakin?\nData peminjaman dengan BUKU ini juga akan ikut terhapus!", "Konfirmasi", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+            int x = JOptionPane.showConfirmDialog(null, "Data Buku dengan\n\nJudul: " + judul + "\nKode Buku: " + kode + "\n\nakan Anda hapus, yakin?\nData peminjaman dengan BUKU ini juga akan ikut terhapus!", "Konfirmasi", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
             if (x == JOptionPane.YES_OPTION) {
                 try {
                     Connection con = new database.connection().configDB();
-                    String sql = "DELETE FROM buku WHERE kode = '"+kode+"'";
-                    String sql2 = "DELETE FROM peminjaman WHERE kode = '"+kode+"' AND judul = '"+judul+"'";
+                    String sql = "DELETE FROM buku WHERE kode = '" + kode + "'";
+                    String sql2 = "DELETE FROM peminjaman WHERE kode = '" + kode + "' AND judul = '" + judul + "'";
                     java.sql.Statement st = con.createStatement();
                     st.executeUpdate(sql);
                     st.executeUpdate(sql2);
@@ -1267,7 +1280,7 @@ public class home extends javax.swing.JFrame {
             String kode = tbl2.getValueAt(baris, 0).toString();
             try {
                 Connection con = new database.connection().configDB();
-                String sql = "SELECT * FROM buku WHERE kode = '"+kode+"'";
+                String sql = "SELECT * FROM buku WHERE kode = '" + kode + "'";
                 java.sql.Statement st = con.createStatement();
                 java.sql.ResultSet rs = st.executeQuery(sql);
 
@@ -1315,11 +1328,11 @@ public class home extends javax.swing.JFrame {
             String kode = tbl1.getValueAt(baris, 3).toString();
             String tanggal = tbl1.getValueAt(baris, 5).toString();
 
-            int x = JOptionPane.showConfirmDialog(null, "Data Peminjaman Buku dengan\n\nKode Buku: "+kode+"\nNIS Siswa: "+nis+"\nTanggal Peminjaman: "+tanggal+"\n\nakan Anda hapus, yakin?", "Konfirmasi", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+            int x = JOptionPane.showConfirmDialog(null, "Data Peminjaman Buku dengan\n\nKode Buku: " + kode + "\nNIS Siswa: " + nis + "\nTanggal Peminjaman: " + tanggal + "\n\nakan Anda hapus, yakin?", "Konfirmasi", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
             if (x == JOptionPane.YES_OPTION) {
                 try {
                     Connection con = new database.connection().configDB();
-                    String sql = "DELETE FROM peminjaman WHERE nis = '"+nis+"' AND kode = '"+kode+"' AND tanggal = '"+tanggal+"'";
+                    String sql = "DELETE FROM peminjaman WHERE nis = '" + nis + "' AND kode = '" + kode + "' AND tanggal = '" + tanggal + "'";
                     java.sql.Statement st = con.createStatement();
                     st.executeUpdate(sql);
                     JOptionPane.showMessageDialog(null, "Data berhasil dihapus!", "Informasi", JOptionPane.INFORMATION_MESSAGE);
@@ -1343,7 +1356,7 @@ public class home extends javax.swing.JFrame {
 
             try {
                 Connection con = new database.connection().configDB();
-                String sql = "SELECT * FROM peminjaman WHERE nis = '"+nis+"' AND kode = '"+kode+"' AND tanggal = '"+tanggal+"'";
+                String sql = "SELECT * FROM peminjaman WHERE nis = '" + nis + "' AND kode = '" + kode + "' AND tanggal = '" + tanggal + "'";
                 java.sql.Statement st = con.createStatement();
                 java.sql.ResultSet rs = st.executeQuery(sql);
 
@@ -1391,12 +1404,12 @@ public class home extends javax.swing.JFrame {
     private void tambahPengembalianMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tambahPengembalianMouseClicked
         // TODO add your handling code here:
         new pages.add_pengembalian(this, rootPaneCheckingEnabled).setVisible(true);
-        
+
     }//GEN-LAST:event_tambahPengembalianMouseClicked
 
     private void ubah1_value1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ubah1_value1MouseClicked
         // TODO add your handling code here:
-        
+
         int baris = tb_pengembalian.getSelectedRow();
         if (baris >= 0) {
             String nis = tbl4.getValueAt(baris, 0).toString();
@@ -1405,7 +1418,7 @@ public class home extends javax.swing.JFrame {
 
             try {
                 Connection con = new database.connection().configDB();
-                String sql = "SELECT * FROM pengembalian WHERE nis = '"+nis+"' AND kode_buku = '"+kode+"' AND tanggal_kembali = '"+tanggal+"'";
+                String sql = "SELECT * FROM pengembalian WHERE nis = '" + nis + "' AND kode_buku = '" + kode + "' AND tanggal_kembali = '" + tanggal + "'";
                 java.sql.Statement st = con.createStatement();
                 java.sql.ResultSet rs = st.executeQuery(sql);
 
@@ -1429,11 +1442,11 @@ public class home extends javax.swing.JFrame {
             String kode = tbl4.getValueAt(baris, 3).toString();
             String tanggal = tbl4.getValueAt(baris, 5).toString();
 
-            int x = JOptionPane.showConfirmDialog(null, "Data Pengembalian Buku dengan\n\nKode Buku: "+kode+"\nNIS Siswa: "+nis+"\nTanggal Kembali: "+tanggal+"\n\nakan Anda hapus, yakin?", "Konfirmasi", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+            int x = JOptionPane.showConfirmDialog(null, "Data Pengembalian Buku dengan\n\nKode Buku: " + kode + "\nNIS Siswa: " + nis + "\nTanggal Kembali: " + tanggal + "\n\nakan Anda hapus, yakin?", "Konfirmasi", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
             if (x == JOptionPane.YES_OPTION) {
                 try {
                     Connection con = new database.connection().configDB();
-                    String sql = "DELETE FROM pengembalian WHERE nis = '"+nis+"' AND kode_buku = '"+kode+"' AND tanggal_kembali = '"+tanggal+"'";
+                    String sql = "DELETE FROM pengembalian WHERE nis = '" + nis + "' AND kode_buku = '" + kode + "' AND tanggal_kembali = '" + tanggal + "'";
                     java.sql.Statement st = con.createStatement();
                     st.executeUpdate(sql);
                     JOptionPane.showMessageDialog(null, "Data berhasil dihapus!", "Informasi", JOptionPane.INFORMATION_MESSAGE);
@@ -1454,28 +1467,28 @@ public class home extends javax.swing.JFrame {
 
     private void reportPeminjaman_MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reportPeminjaman_MouseClicked
         // TODO add your handling code here:
-      
+
         File reportFile = new File(".");
         try {
             Connection con = new database.connection().configDB();
             String sql = "SELECT * FROM peminjaman";
             java.sql.Statement stat = con.createStatement();
             java.sql.ResultSet hasil = stat.executeQuery(sql);
-       
-            String dirr = reportFile.getCanonicalPath()+"/src/reportPeminjaman/";
-            
+
+            String dirr = reportFile.getCanonicalPath() + "/src/reportPeminjaman/";
+
             JasperDesign design = JRXmlLoader.load(dirr + "reportPeminjaman.jrxml");
             JasperReport jr = JasperCompileManager.compileReport(design);
-            
+
             JRResultSetDataSource rsDataSource = new JRResultSetDataSource(hasil);
             Map params = new HashMap();
-            params.put("nama_petugas",userName.getText());
+            params.put("nama_petugas", userName.getText());
             JasperPrint jp = JasperFillManager.fillReport(
                     jr, params, rsDataSource
             );
-            
-            JasperViewer.viewReport(jp,false);
-            
+
+            JasperViewer.viewReport(jp, false);
+
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e, "Kesalahan", JOptionPane.ERROR_MESSAGE);
             System.exit(0);
@@ -1491,19 +1504,19 @@ public class home extends javax.swing.JFrame {
             String sql = "SELECT * FROM buku";
             java.sql.Statement stat = con.createStatement();
             java.sql.ResultSet hasil = stat.executeQuery(sql);
-       
-            String dirr = reportFile.getCanonicalPath()+"/src/reportBuku/";
-            
+
+            String dirr = reportFile.getCanonicalPath() + "/src/reportBuku/";
+
             JasperDesign design = JRXmlLoader.load(dirr + "reportBuku.jrxml");
             JasperReport jr = JasperCompileManager.compileReport(design);
-            
+
             JRResultSetDataSource rsDataSource = new JRResultSetDataSource(hasil);
             Map params = new HashMap();
-            params.put("nama_petugas",userName.getText());
+            params.put("nama_petugas", userName.getText());
             JasperPrint jp = JasperFillManager.fillReport(jr, params, rsDataSource);
-            
-            JasperViewer.viewReport(jp,false);
-            
+
+            JasperViewer.viewReport(jp, false);
+
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Gagal Mencetak !", "Kesalahan", JOptionPane.ERROR_MESSAGE);
             System.exit(0);
@@ -1519,19 +1532,19 @@ public class home extends javax.swing.JFrame {
             String sql = "SELECT * FROM murid";
             java.sql.Statement stat = con.createStatement();
             java.sql.ResultSet hasil = stat.executeQuery(sql);
-       
-            String dirr = reportFile.getCanonicalPath()+"/src/reportSiswa/";
-            
+
+            String dirr = reportFile.getCanonicalPath() + "/src/reportSiswa/";
+
             JasperDesign design = JRXmlLoader.load(dirr + "reportSiswa.jrxml");
             JasperReport jr = JasperCompileManager.compileReport(design);
-            
+
             JRResultSetDataSource rsDataSource = new JRResultSetDataSource(hasil);
             Map params = new HashMap();
-            params.put("nama_petugas",userName.getText());
+            params.put("nama_petugas", userName.getText());
             JasperPrint jp = JasperFillManager.fillReport(jr, params, rsDataSource);
-            
-            JasperViewer.viewReport(jp,false);
-            
+
+            JasperViewer.viewReport(jp, false);
+
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Gagal Mencetak !", "Kesalahan", JOptionPane.ERROR_MESSAGE);
             System.exit(0);
@@ -1541,26 +1554,26 @@ public class home extends javax.swing.JFrame {
 
     private void reportPengembalian_MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reportPengembalian_MouseClicked
         // TODO add your handling code here:
-        
+
         File reportFile = new File(".");
         try {
             Connection con = new database.connection().configDB();
             String sql = "SELECT * FROM pengembalian";
             java.sql.Statement stat = con.createStatement();
             java.sql.ResultSet hasil = stat.executeQuery(sql);
-       
-            String dirr = reportFile.getCanonicalPath()+"/src/reportPengembalian/";
-            
+
+            String dirr = reportFile.getCanonicalPath() + "/src/reportPengembalian/";
+
             JasperDesign design = JRXmlLoader.load(dirr + "reportPengembalian.jrxml");
             JasperReport jr = JasperCompileManager.compileReport(design);
-            
+
             JRResultSetDataSource rsDataSource = new JRResultSetDataSource(hasil);
             Map params = new HashMap();
-            params.put("nama_petugas",userName.getText());
+            params.put("nama_petugas", userName.getText());
             JasperPrint jp = JasperFillManager.fillReport(jr, params, rsDataSource);
-            
-            JasperViewer.viewReport(jp,false);
-            
+
+            JasperViewer.viewReport(jp, false);
+
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Gagal Mencetak !", "Kesalahan", JOptionPane.ERROR_MESSAGE);
             System.exit(0);
@@ -1577,6 +1590,16 @@ public class home extends javax.swing.JFrame {
         this.dispose();
         new user(this, rootPaneCheckingEnabled, userName.getText()).setVisible(true);
     }//GEN-LAST:event_userinfoComponentShown
+
+    private void signOutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signOutMouseClicked
+        // TODO add your handling code here:
+        int x = JOptionPane.showConfirmDialog(null, "Apa anda yakin?", "Sign Out", JOptionPane.YES_NO_OPTION, JOptionPane.ERROR_MESSAGE);
+        if (x == JOptionPane.YES_OPTION) {
+            login n = new login();
+            n.setVisible(true);
+            this.setVisible(false);
+        }
+    }//GEN-LAST:event_signOutMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1608,13 +1631,13 @@ public class home extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new home(0+"").setVisible(true);
+                new home(0 + "").setVisible(true);
             }
         });
     }
-    
+
     private void timenow() {
-    // ActionListener untuk Keperluan Timer
+        // ActionListener untuk Keperluan Timer
         ActionListener taskPerformer = new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 String nol_jam = "";
@@ -1623,7 +1646,7 @@ public class home extends javax.swing.JFrame {
                 // Membuat Date
                 java.util.Date dt = new java.util.Date();
                 // Membuat date format
-                java.text.SimpleDateFormat kal = new java.text.SimpleDateFormat ("EEEE, dd MMMMM yyyy") ;
+                java.text.SimpleDateFormat kal = new java.text.SimpleDateFormat("EEEE, dd MMMMM yyyy");
                 // Mengambil nilaj JAM, MENIT, dan DETIK Sekarang
                 int nilai_jam = dt.getHours();
                 int nilai_menit = dt.getMinutes();
@@ -1648,21 +1671,21 @@ public class home extends javax.swing.JFrame {
                 String menit = nol_menit + Integer.toString(nilai_menit);
                 String detik = nol_detik + Integer.toString(nilai_detik);
                 // Menampilkan pada Layar
-                timenow.setText(kal.format(dt)+"     "+jam + ":" + menit + ":" + detik+"                                   ");
+                timenow.setText(kal.format(dt) + "     " + jam + ":" + menit + ":" + detik + "                                   ");
             }
         };
         // Timer
         new javax.swing.Timer(1000, taskPerformer).start();
     }
-    
+
     private void copyright() {
         java.util.Date sekarang = new java.util.Date();
-        java.text.SimpleDateFormat kal = new java.text.SimpleDateFormat("yyyy") ;
-        copyright.setText("© "+kal.format(sekarang)+" Yudhistira. All Right Reserved.");
+        java.text.SimpleDateFormat kal = new java.text.SimpleDateFormat("yyyy");
+        copyright.setText("© " + kal.format(sekarang) + " Yudhistira. All Right Reserved.");
     }
-    
+
     private void tampil_peminjaman() {
-        Object []baris = {"NIS", "Nama", "Kelas", "Kode Buku", "Judul Buku", "Tanggal Peminjaman"};
+        Object[] baris = {"NIS", "Nama", "Kelas", "Kode Buku", "Judul Buku", "Tanggal Peminjaman"};
         tbl1 = new DefaultTableModel(null, baris) {
             public boolean isCellEditable(int row, int column) {
                 return false;
@@ -1674,7 +1697,7 @@ public class home extends javax.swing.JFrame {
             String sql = "SELECT * FROM peminjaman ORDER BY id_peminjaman ASC";
             java.sql.Statement stat = con.createStatement();
             java.sql.ResultSet hasil = stat.executeQuery(sql);
-            
+
             while (hasil.next()) {
                 String nis = hasil.getString("nis");
                 String nama = hasil.getString("nama");
@@ -1682,7 +1705,7 @@ public class home extends javax.swing.JFrame {
                 String kode = hasil.getString("kode");
                 String judul = hasil.getString("judul");
                 String tanggal = hasil.getString("tanggal");
-                
+
                 String[] data = {nis, nama, jurusan, kode, judul, tanggal};
                 tbl1.addRow(data);
             }
@@ -1692,9 +1715,9 @@ public class home extends javax.swing.JFrame {
             dispose();
         }
     }
-    
+
     private void tampil_buku() {
-        Object []baris = {"Kode Buku", "Judul Buku", "Jenis", "Tanggal Terbit", "Pengarang"};
+        Object[] baris = {"Kode Buku", "Judul Buku", "Jenis", "Tanggal Terbit", "Pengarang"};
         tbl2 = new DefaultTableModel(null, baris) {
             public boolean isCellEditable(int row, int column) {
                 return false;
@@ -1706,222 +1729,14 @@ public class home extends javax.swing.JFrame {
             String sql = "SELECT * FROM buku ORDER BY id_buku ASC";
             java.sql.Statement stat = con.createStatement();
             java.sql.ResultSet hasil = stat.executeQuery(sql);
-            
+
             while (hasil.next()) {
                 String jenis = null;
                 String kode = hasil.getString("kode");
                 String judul = hasil.getString("judul");
                 String tanggal = hasil.getString("tanggal");
                 String pengarang = hasil.getString("pengarang");
-                
-                if (hasil.getString("jenis").equals("1")) {
-                    jenis = "Ensiklopedia";
-                } else if (hasil.getString("jenis").equals("2")) {
-                    jenis = "Novel";
-                } else if (hasil.getString("jenis").equals("3")) {
-                    jenis = "Komik";
-                } else if (hasil.getString("jenis").equals("4")) {
-                    jenis = "Biografi";
-                } else if (hasil.getString("jenis").equals("5")) {
-                    jenis = "Dongeng";
-                } else if (hasil.getString("jenis").equals("6")) {
-                    jenis = "Karya Ilmiah";
-               }
-                
-                String[] data = {kode, judul, jenis, tanggal, pengarang};
-                tbl2.addRow(data);
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Gagal Menampilkan DATA!", "Kesalahan", JOptionPane.ERROR_MESSAGE);
-            System.exit(0);
-            dispose();
-        }
-    }
-    
-    private void tampil_siswa() {
-        Object []baris = {"NIS", "Nama Lengkap", "Alamat", "No Telp", "Kelas", "Tanggal Masuk"};
-        tbl3 = new DefaultTableModel(null, baris) {
-            public boolean isCellEditable(int row, int column) {
-                return false;
-            }
-        };
-        tb_siswa.setModel(tbl3);
-        
-        try {
-            Connection con = new database.connection().configDB();
-            String sql = "SELECT * FROM murid ORDER BY id_siswa ASC";
-            java.sql.Statement stat = con.createStatement();
-            java.sql.ResultSet hasil = stat.executeQuery(sql);
-            
-            while (hasil.next()) {
-                String nis = hasil.getString("nis");
-                String nama = hasil.getString("nama");
-                String tempat_lahir = hasil.getString("alamat");
-                String tanggal_lahir = hasil.getString("no_telp");
-                String jurusan = hasil.getString("kelas");
-                String tanggal = hasil.getString("tanggal");
-                
-                String[] data = {nis, nama, tempat_lahir, tanggal_lahir, jurusan, tanggal};
-                tbl3.addRow(data);
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Gagal Menampilkan DATA!", "Kesalahan", JOptionPane.ERROR_MESSAGE);
-            System.exit(0);
-            dispose();
-        }
-    }
-    
-    private void tampil_pengembalian() {
-        Object []baris = {"NIS", "Nama", "Kelas", "Kode Buku", "Judul Buku", "Tanggal Pengembalian"};
-        tbl4 = new DefaultTableModel(null, baris) {
-            public boolean isCellEditable(int row, int column) {
-                return false;
-            }
-        };
-        tb_pengembalian.setModel(tbl4);
-        
-        try {
-            Connection con = new database.connection().configDB();
-            String sql = "SELECT * FROM pengembalian ORDER BY id_pengembalian ASC";
-            java.sql.Statement stat = con.createStatement();
-            java.sql.ResultSet hasil = stat.executeQuery(sql);
-            
-            while (hasil.next()) {
-                String nis = hasil.getString("nis");
-                String nama = hasil.getString("nama");
-                String kelas = hasil.getString("kelas");
-                String kodeBuku = hasil.getString("kode_buku");
-                String judulBuku = hasil.getString("judul_buku");
-                String tanggalKembali = hasil.getString("tanggal_kembali");
-                
-                String[] data = {nis, nama, kelas, kodeBuku, judulBuku, tanggalKembali};
-                tbl4.addRow(data);
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Gagal Menampilkan DATA!", "Kesalahan", JOptionPane.ERROR_MESSAGE);
-            System.exit(0);
-            dispose();
-        }
-    }
-    
-    private void search_peminjaman() {
-        String query = search_peminjaman.getText();
-        
-        Object []baris = {"NIS", "Nama", "Kelas", "Kode Buku", "Judul Buku", "Tanggal Peminjaman"};
-        tbl1 = new DefaultTableModel(null, baris) {
-            public boolean isCellEditable(int row, int column) {
-                return false;
-            }
-        };
-        tb_peminjaman.setModel(tbl1);
-        
-        try {
-            Connection con = new database.connection().configDB();
-            String sql = "SELECT * FROM peminjaman WHERE BINARY "
-                    + "nis LIKE '%"+query+"%' "
-                    + "OR nama LIKE '%"+query+"%' "
-                    + "OR kelas LIKE '%"+query+"%' "
-                    + "OR kode LIKE '%"+query+"%' "
-                    + "OR judul LIKE '%"+query+"%' "
-                    + "OR tanggal LIKE '%"+query+"%' "
-                    + "ORDER BY id_peminjaman ASC";
-            java.sql.Statement stmt = con.createStatement();
-            java.sql.ResultSet hasil = stmt.executeQuery(sql);
-            
-            while (hasil.next()) {
-                String nis = hasil.getString("nis");
-                String nama = hasil.getString("nama");
-                String jurusan = hasil.getString("kelas");
-                String kode = hasil.getString("kode");
-                String judul = hasil.getString("judul");
-                String tanggal = hasil.getString("tanggal");
-                
-                String[] data = {nis, nama, jurusan, kode, judul, tanggal};
-                tbl1.addRow(data);
-            }
-            
-            if (!query.equals("")) {
-                result_peminjaman.setText("Hasil pencarian dari: '"+query+"'");
-            } else {
-                result_peminjaman.setText("");
-            }
-        } catch (Exception e) {}
-    }
-    
-    private void search_pengembalian() {
-        String query = search_pengembalian.getText();
-        
-        Object []baris = {"NIS", "Nama", "Kelas", "Kode Buku", "Judul Buku", "Tanggal Kembali"};
-        tbl4 = new DefaultTableModel(null, baris) {
-            public boolean isCellEditable(int row, int column) {
-                return false;
-            }
-        };
-        tb_pengembalian.setModel(tbl4);
-        
-        try {
-            Connection con = new database.connection().configDB();
-            String sql = "SELECT * FROM pengembalian WHERE BINARY "
-                    + "nis LIKE '%"+query+"%' "
-                    + "OR nama LIKE '%"+query+"%' "
-                    + "OR kelas LIKE '%"+query+"%' "
-                    + "OR kode_buku LIKE '%"+query+"%' "
-                    + "OR judul_buku LIKE '%"+query+"%' "
-                    + "OR tanggal_kembali LIKE '%"+query+"%' "
-                    + "ORDER BY id_pengembalian ASC";
-            java.sql.Statement stmt = con.createStatement();
-            java.sql.ResultSet hasil = stmt.executeQuery(sql);
-            
-            while (hasil.next()) {
-                String nis = hasil.getString("nis");
-                String nama = hasil.getString("nama");
-                String jurusan = hasil.getString("kelas");
-                String kode = hasil.getString("kode_buku");
-                String judul = hasil.getString("judul_buku");
-                String tanggal = hasil.getString("tanggal_kembali");
-                
-                String[] data = {nis, nama, jurusan, kode, judul, tanggal};
-                tbl4.addRow(data);
-            }
-            
-            if (!query.equals("")) {
-                result_pengembalian.setText("Hasil pencarian dari: '"+query+"'");
-            } else {
-                result_pengembalian.setText("");
-            }
-            
-        } catch (Exception e) {JOptionPane.showMessageDialog(null, e, "Kesalahan", JOptionPane.ERROR_MESSAGE);}
-    }
-    
-    private void search_buku() {
-        String query = search_buku.getText();
-        
-        Object []baris = {"Kode Buku", "Judul Buku", "Jenis", "Tanggal Terbit", "Pengarang"};
-        tbl2 = new DefaultTableModel(null, baris) {
-            public boolean isCellEditable(int row, int column) {
-                return false;
-            }
-        };
-        tb_buku.setModel(tbl2);
-        
-        try {
-            Connection con = new database.connection().configDB();
-            String sql = "SELECT * FROM buku WHERE BINARY "
-                    + "kode LIKE '%"+query+"%' "
-                    + "OR judul LIKE '%"+query+"%' "
-                    + "OR tanggal LIKE '%"+query+"%' "
-                    + "OR pengarang LIKE '%"+query+"%' "
-                    + "ORDER BY id_buku ASC";
-            java.sql.Statement stmt = con.createStatement();
-            java.sql.ResultSet hasil = stmt.executeQuery(sql);
-            
-            while (hasil.next()) {
-                String jenis = null;
-                String kode = hasil.getString("kode");
-                String judul = hasil.getString("judul");
-                String tanggal = hasil.getString("tanggal");
-                String pengarang = hasil.getString("pengarang");
-                
+
                 if (hasil.getString("jenis").equals("1")) {
                     jenis = "Ensiklopedia";
                 } else if (hasil.getString("jenis").equals("2")) {
@@ -1935,43 +1750,32 @@ public class home extends javax.swing.JFrame {
                 } else if (hasil.getString("jenis").equals("6")) {
                     jenis = "Karya Ilmiah";
                 }
-                
+
                 String[] data = {kode, judul, jenis, tanggal, pengarang};
                 tbl2.addRow(data);
             }
-            
-            if (!query.equals("")) {
-                result_buku.setText("Hasil pencarian dari: '"+query+"'");
-            } else {
-                result_buku.setText("");
-            }
-        } catch (Exception e) {}
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Gagal Menampilkan DATA!", "Kesalahan", JOptionPane.ERROR_MESSAGE);
+            System.exit(0);
+            dispose();
+        }
     }
-    
-    private void search_siswa() {
-        String query = search_siswa.getText();
-        
-        Object []baris = {"NIS", "Nama Lengkap", "Alamat", "No Telp", "Jurusan", "Tanggal Masuk"};
+
+    private void tampil_siswa() {
+        Object[] baris = {"NIS", "Nama Lengkap", "Alamat", "No Telp", "Kelas", "Tanggal Masuk"};
         tbl3 = new DefaultTableModel(null, baris) {
             public boolean isCellEditable(int row, int column) {
                 return false;
             }
         };
         tb_siswa.setModel(tbl3);
-        
+
         try {
             Connection con = new database.connection().configDB();
-            String sql = "SELECT * FROM murid WHERE BINARY "
-                    + "nis LIKE '%"+query+"%' "
-                    + "OR nama LIKE '%"+query+"%' "
-                    + "OR alamat LIKE '%"+query+"%' "
-                    + "OR no_telp LIKE '%"+query+"%' "
-                    + "OR kelas LIKE '%"+query+"%' "
-                    + "OR tanggal LIKE '%"+query+"%' "
-                    + "ORDER BY id_siswa ASC";
-            java.sql.Statement stmt = con.createStatement();
-            java.sql.ResultSet hasil = stmt.executeQuery(sql);
-            
+            String sql = "SELECT * FROM murid ORDER BY id_siswa ASC";
+            java.sql.Statement stat = con.createStatement();
+            java.sql.ResultSet hasil = stat.executeQuery(sql);
+
             while (hasil.next()) {
                 String nis = hasil.getString("nis");
                 String nama = hasil.getString("nama");
@@ -1979,20 +1783,244 @@ public class home extends javax.swing.JFrame {
                 String tanggal_lahir = hasil.getString("no_telp");
                 String jurusan = hasil.getString("kelas");
                 String tanggal = hasil.getString("tanggal");
-                
+
                 String[] data = {nis, nama, tempat_lahir, tanggal_lahir, jurusan, tanggal};
                 tbl3.addRow(data);
             }
-            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Gagal Menampilkan DATA!", "Kesalahan", JOptionPane.ERROR_MESSAGE);
+            System.exit(0);
+            dispose();
+        }
+    }
+
+    private void tampil_pengembalian() {
+        Object[] baris = {"NIS", "Nama", "Kelas", "Kode Buku", "Judul Buku", "Tanggal Pengembalian"};
+        tbl4 = new DefaultTableModel(null, baris) {
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
+        tb_pengembalian.setModel(tbl4);
+
+        try {
+            Connection con = new database.connection().configDB();
+            String sql = "SELECT * FROM pengembalian ORDER BY id_pengembalian ASC";
+            java.sql.Statement stat = con.createStatement();
+            java.sql.ResultSet hasil = stat.executeQuery(sql);
+
+            while (hasil.next()) {
+                String nis = hasil.getString("nis");
+                String nama = hasil.getString("nama");
+                String kelas = hasil.getString("kelas");
+                String kodeBuku = hasil.getString("kode_buku");
+                String judulBuku = hasil.getString("judul_buku");
+                String tanggalKembali = hasil.getString("tanggal_kembali");
+
+                String[] data = {nis, nama, kelas, kodeBuku, judulBuku, tanggalKembali};
+                tbl4.addRow(data);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Gagal Menampilkan DATA!", "Kesalahan", JOptionPane.ERROR_MESSAGE);
+            System.exit(0);
+            dispose();
+        }
+    }
+
+    private void search_peminjaman() {
+        String query = search_peminjaman.getText();
+
+        Object[] baris = {"NIS", "Nama", "Kelas", "Kode Buku", "Judul Buku", "Tanggal Peminjaman"};
+        tbl1 = new DefaultTableModel(null, baris) {
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
+        tb_peminjaman.setModel(tbl1);
+
+        try {
+            Connection con = new database.connection().configDB();
+            String sql = "SELECT * FROM peminjaman WHERE BINARY "
+                    + "nis LIKE '%" + query + "%' "
+                    + "OR nama LIKE '%" + query + "%' "
+                    + "OR kelas LIKE '%" + query + "%' "
+                    + "OR kode LIKE '%" + query + "%' "
+                    + "OR judul LIKE '%" + query + "%' "
+                    + "OR tanggal LIKE '%" + query + "%' "
+                    + "ORDER BY id_peminjaman ASC";
+            java.sql.Statement stmt = con.createStatement();
+            java.sql.ResultSet hasil = stmt.executeQuery(sql);
+
+            while (hasil.next()) {
+                String nis = hasil.getString("nis");
+                String nama = hasil.getString("nama");
+                String jurusan = hasil.getString("kelas");
+                String kode = hasil.getString("kode");
+                String judul = hasil.getString("judul");
+                String tanggal = hasil.getString("tanggal");
+
+                String[] data = {nis, nama, jurusan, kode, judul, tanggal};
+                tbl1.addRow(data);
+            }
+
             if (!query.equals("")) {
-                result_siswa.setText("Hasil pencarian dari: '"+query+"'");
+                result_peminjaman.setText("Hasil pencarian dari: '" + query + "'");
+            } else {
+                result_peminjaman.setText("");
+            }
+        } catch (Exception e) {
+        }
+    }
+
+    private void search_pengembalian() {
+        String query = search_pengembalian.getText();
+
+        Object[] baris = {"NIS", "Nama", "Kelas", "Kode Buku", "Judul Buku", "Tanggal Kembali"};
+        tbl4 = new DefaultTableModel(null, baris) {
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
+        tb_pengembalian.setModel(tbl4);
+
+        try {
+            Connection con = new database.connection().configDB();
+            String sql = "SELECT * FROM pengembalian WHERE BINARY "
+                    + "nis LIKE '%" + query + "%' "
+                    + "OR nama LIKE '%" + query + "%' "
+                    + "OR kelas LIKE '%" + query + "%' "
+                    + "OR kode_buku LIKE '%" + query + "%' "
+                    + "OR judul_buku LIKE '%" + query + "%' "
+                    + "OR tanggal_kembali LIKE '%" + query + "%' "
+                    + "ORDER BY id_pengembalian ASC";
+            java.sql.Statement stmt = con.createStatement();
+            java.sql.ResultSet hasil = stmt.executeQuery(sql);
+
+            while (hasil.next()) {
+                String nis = hasil.getString("nis");
+                String nama = hasil.getString("nama");
+                String jurusan = hasil.getString("kelas");
+                String kode = hasil.getString("kode_buku");
+                String judul = hasil.getString("judul_buku");
+                String tanggal = hasil.getString("tanggal_kembali");
+
+                String[] data = {nis, nama, jurusan, kode, judul, tanggal};
+                tbl4.addRow(data);
+            }
+
+            if (!query.equals("")) {
+                result_pengembalian.setText("Hasil pencarian dari: '" + query + "'");
+            } else {
+                result_pengembalian.setText("");
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e, "Kesalahan", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    private void search_buku() {
+        String query = search_buku.getText();
+
+        Object[] baris = {"Kode Buku", "Judul Buku", "Jenis", "Tanggal Terbit", "Pengarang"};
+        tbl2 = new DefaultTableModel(null, baris) {
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
+        tb_buku.setModel(tbl2);
+
+        try {
+            Connection con = new database.connection().configDB();
+            String sql = "SELECT * FROM buku WHERE BINARY "
+                    + "kode LIKE '%" + query + "%' "
+                    + "OR judul LIKE '%" + query + "%' "
+                    + "OR tanggal LIKE '%" + query + "%' "
+                    + "OR pengarang LIKE '%" + query + "%' "
+                    + "ORDER BY id_buku ASC";
+            java.sql.Statement stmt = con.createStatement();
+            java.sql.ResultSet hasil = stmt.executeQuery(sql);
+
+            while (hasil.next()) {
+                String jenis = null;
+                String kode = hasil.getString("kode");
+                String judul = hasil.getString("judul");
+                String tanggal = hasil.getString("tanggal");
+                String pengarang = hasil.getString("pengarang");
+
+                if (hasil.getString("jenis").equals("1")) {
+                    jenis = "Ensiklopedia";
+                } else if (hasil.getString("jenis").equals("2")) {
+                    jenis = "Novel";
+                } else if (hasil.getString("jenis").equals("3")) {
+                    jenis = "Komik";
+                } else if (hasil.getString("jenis").equals("4")) {
+                    jenis = "Biografi";
+                } else if (hasil.getString("jenis").equals("5")) {
+                    jenis = "Dongeng";
+                } else if (hasil.getString("jenis").equals("6")) {
+                    jenis = "Karya Ilmiah";
+                }
+
+                String[] data = {kode, judul, jenis, tanggal, pengarang};
+                tbl2.addRow(data);
+            }
+
+            if (!query.equals("")) {
+                result_buku.setText("Hasil pencarian dari: '" + query + "'");
+            } else {
+                result_buku.setText("");
+            }
+        } catch (Exception e) {
+        }
+    }
+
+    private void search_siswa() {
+        String query = search_siswa.getText();
+
+        Object[] baris = {"NIS", "Nama Lengkap", "Alamat", "No Telp", "Jurusan", "Tanggal Masuk"};
+        tbl3 = new DefaultTableModel(null, baris) {
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
+        tb_siswa.setModel(tbl3);
+
+        try {
+            Connection con = new database.connection().configDB();
+            String sql = "SELECT * FROM murid WHERE BINARY "
+                    + "nis LIKE '%" + query + "%' "
+                    + "OR nama LIKE '%" + query + "%' "
+                    + "OR alamat LIKE '%" + query + "%' "
+                    + "OR no_telp LIKE '%" + query + "%' "
+                    + "OR kelas LIKE '%" + query + "%' "
+                    + "OR tanggal LIKE '%" + query + "%' "
+                    + "ORDER BY id_siswa ASC";
+            java.sql.Statement stmt = con.createStatement();
+            java.sql.ResultSet hasil = stmt.executeQuery(sql);
+
+            while (hasil.next()) {
+                String nis = hasil.getString("nis");
+                String nama = hasil.getString("nama");
+                String tempat_lahir = hasil.getString("alamat");
+                String tanggal_lahir = hasil.getString("no_telp");
+                String jurusan = hasil.getString("kelas");
+                String tanggal = hasil.getString("tanggal");
+
+                String[] data = {nis, nama, tempat_lahir, tanggal_lahir, jurusan, tanggal};
+                tbl3.addRow(data);
+            }
+
+            if (!query.equals("")) {
+                result_siswa.setText("Hasil pencarian dari: '" + query + "'");
             } else {
                 result_siswa.setText("");
             }
-        } catch (Exception e) {}
+        } catch (Exception e) {
+        }
     }
-    
-    public void setUserName(String username){
+
+    public void setUserName(String username) {
         userName.setText(username);
     }
 
@@ -2041,6 +2069,7 @@ public class home extends javax.swing.JFrame {
     private javax.swing.JPanel segarkan3;
     private javax.swing.JLabel segarkan3_value;
     private javax.swing.JPanel segarkan4;
+    private javax.swing.JLabel signOut;
     private javax.swing.JTabbedPane tab;
     private javax.swing.JPanel tambah1;
     private javax.swing.JLabel tambah1_value;
