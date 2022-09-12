@@ -4,6 +4,7 @@ import java.awt.Toolkit;
 import java.sql.*;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -72,6 +73,8 @@ public class user extends javax.swing.JDialog {
         tambah_ = new javax.swing.JRadioButton();
         ubah_ = new javax.swing.JRadioButton();
         userName = new javax.swing.JLabel();
+        esbtn1 = new javax.swing.JPanel();
+        delete_admin = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -131,11 +134,11 @@ public class user extends javax.swing.JDialog {
         esbtn.setLayout(esbtnLayout);
         esbtnLayout.setHorizontalGroup(
             esbtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(edit_save, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addComponent(edit_save, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
         );
         esbtnLayout.setVerticalGroup(
             esbtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(edit_save, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+            .addComponent(edit_save, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         tbl_admin.setModel(new javax.swing.table.DefaultTableModel(
@@ -180,6 +183,28 @@ public class user extends javax.swing.JDialog {
 
         userName.setText("jLabel5");
 
+        esbtn1.setBackground(new java.awt.Color(0, 102, 153));
+
+        delete_admin.setForeground(new java.awt.Color(255, 255, 255));
+        delete_admin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        delete_admin.setText("Hapus Admin");
+        delete_admin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                delete_adminMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout esbtn1Layout = new javax.swing.GroupLayout(esbtn1);
+        esbtn1.setLayout(esbtn1Layout);
+        esbtn1Layout.setHorizontalGroup(
+            esbtn1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(delete_admin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+        );
+        esbtn1Layout.setVerticalGroup(
+            esbtn1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(delete_admin, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -211,10 +236,15 @@ public class user extends javax.swing.JDialog {
                             .addComponent(password))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(passlawas)))
-                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(esbtn1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
@@ -237,22 +267,17 @@ public class user extends javax.swing.JDialog {
                     .addComponent(jLabel3)
                     .addComponent(tambah_)
                     .addComponent(ubah_))
-                .addGap(8, 8, 8)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(esbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                        .addGap(27, 27, 27))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(47, 47, 47)
+                                .addGap(55, 55, 55)
                                 .addComponent(passlawas))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(4, 4, 4)
+                                .addGap(12, 12, 12)
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -263,8 +288,12 @@ public class user extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(85, Short.MAX_VALUE))))
+                        .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(esbtn1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(esbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(39, 39, 39))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(173, 173, 173)
@@ -416,6 +445,31 @@ public class user extends javax.swing.JDialog {
         edit_save.setText("Tambah Admin");
     }//GEN-LAST:event_tambah_MouseClicked
 
+    private void delete_adminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delete_adminMouseClicked
+        // TODO add your handling code here:
+        int baris = tbl_admin.getSelectedRow();
+        if (baris >= 0) {
+            String username = tbl1.getValueAt(baris, 1).toString();
+            String nama = tbl1.getValueAt(baris, 2).toString();
+
+            int x = JOptionPane.showConfirmDialog(null, "Admin dengan\n\nUsername: "+username+"\nNama: "+nama+"\n\nakan Anda hapus, yakin?", "Konfirmasi", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+            if (x == JOptionPane.YES_OPTION) {
+                try {
+                    Connection con = new database.connection().configDB();
+                    String sql = "DELETE FROM admin WHERE username = '"+username+"' AND nama_lengkap = '"+nama+"'";
+                    java.sql.Statement st = con.createStatement();
+                    st.executeUpdate(sql);
+                    JOptionPane.showMessageDialog(null, "Data berhasil dihapus!", "Informasi", JOptionPane.INFORMATION_MESSAGE);
+                    tampil();
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "Gagal menghapus data!", "Kesalahan", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Anda belum memilih data yang akan dihapus!", "Informasi", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_delete_adminMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -462,13 +516,13 @@ public class user extends javax.swing.JDialog {
     private void clickTabel() {
         int baris = tbl_admin.getSelectedRow();
         if (ubah_.isSelected()) {
-            userlawas.setText((String) tbl1.getValueAt(baris, 0));
-            namalawas.setText((String) tbl1.getValueAt(baris, 1));
-            passlawas.setText((String) tbl1.getValueAt(baris, 2));
+            userlawas.setText((String) tbl1.getValueAt(baris, 1));
+            namalawas.setText((String) tbl1.getValueAt(baris, 2));
+            passlawas.setText((String) tbl1.getValueAt(baris, 3));
 
-            username.setText((String) tbl1.getValueAt(baris, 0));
-            nama_lengkap.setText((String) tbl1.getValueAt(baris, 1));
-            password.setText((String) tbl1.getValueAt(baris, 2));
+            username.setText((String) tbl1.getValueAt(baris, 1));
+            nama_lengkap.setText((String) tbl1.getValueAt(baris, 2));
+            password.setText((String) tbl1.getValueAt(baris, 3));
         }
     }
     
@@ -477,25 +531,30 @@ public class user extends javax.swing.JDialog {
     }
 
     private void tampil() {
-        Object[] baris = {"Username", "Nama Lengkap", "Password"};
+        Object[] baris = {"No","Username", "Nama Lengkap", "Password"};
         tbl1 = new DefaultTableModel(null, baris) {
             public boolean isCellEditable(int row, int column) {
                 return false;
             }
         };
         tbl_admin.setModel(tbl1);
+        TableColumn col = tbl_admin.getColumnModel().getColumn(0);
+        col.setPreferredWidth(5);
         try {
             Connection con = new database.connection().configDB();
             String sql = "SELECT * FROM admin";
             java.sql.Statement stat = con.createStatement();
             java.sql.ResultSet hasil = stat.executeQuery(sql);
+            int no = 1;
             while (hasil.next()) {
+                String no_ = String.valueOf(no);
                 String username_ = hasil.getString("username");
                 String nama_ = hasil.getString("nama_lengkap");
                 String password_ = hasil.getString("password");
 
-                String[] data = {username_, nama_, password_};
+                String[] data = {no_, username_, nama_, password_};
                 tbl1.addRow(data);
+                no++;
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Gagal Menampilkan DATA!", "Kesalahan", JOptionPane.ERROR_MESSAGE);
@@ -506,8 +565,10 @@ public class user extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel close_btn2;
+    private javax.swing.JLabel delete_admin;
     private javax.swing.JLabel edit_save;
     private javax.swing.JPanel esbtn;
+    private javax.swing.JPanel esbtn1;
     private javax.swing.JPanel header2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
